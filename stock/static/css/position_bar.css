@@ -1,0 +1,48 @@
+section.position-bar-section div.position-bar-box{
+    position: absolute;
+    top: 800px;
+    right: 60px;
+    width: 150px;
+    min-height: 180px;
+    background: url("../assets/background/position_bar_bg.jpg");
+    background-size: 100% 100%;
+    box-shadow: 2px 2px 5px 1px rgba(4, 0, 0, 0.27);
+    padding: 10px;
+}
+
+section.position-bar-section div.position-bar-box.fixed{
+    position: fixed;
+    top:390px;
+    right: 67px;
+}
+
+section.position-bar-section div.position-bar-box div.position-item{
+    margin-bottom: 37px;
+}
+section.position-bar-section div.position-bar-box div.position-point{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: 14px;
+    display: inline-block;
+    background-color: #afafaf;
+}
+
+section.position-bar-section div.position-bar-box div.position-point.position-current{
+    position: absolute;
+    margin-bottom: 0;
+    left: 24px;
+    top: 13px;
+    background-color: #fec303;
+    z-index: 10;
+}
+
+section.position-bar-section div.position-bar-box div.position-item.position-bottom{
+    margin-bottom: 4px;
+}
+
+section.position-bar-section div.position-bar-box div.position-item a.position-name{
+    padding-left: 35px;
+    font-family: "Source Han Sans CN Light";
+}

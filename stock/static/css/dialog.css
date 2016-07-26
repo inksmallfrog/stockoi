@@ -1,0 +1,147 @@
+div.modal div.modal-dialog{
+    width: 600px;
+    margin-top: 80px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.login-register-dialog div.modal-dialog div.modal-content{
+    padding: 10px 10px 10px 20px;
+    border-radius: 0;
+    width: auto;
+}
+
+div.login-register-dialog div div div.dialog-with-border{
+    min-height: 330px;
+}
+
+div.login-register-dialog div div div.dialog-with-border button.dialog-close{
+    position: absolute;
+    z-index: 20;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: no-repeat url("../assets/icons/dialog_close.png");
+    background-size: 100%;
+    border: none;
+}
+div.login-register-dialog div div div.dialog-with-border button.dialog-close:focus{
+    outline: none;
+}
+div.login-register-dialog div div div.dialog-with-border div.dialog-container{
+    float: left;
+    position: relative;
+    padding-top: 20px;
+    width: 100%;
+    z-index: 10;
+}
+div.login-register-dialog div div div.dialog-with-border div.dialog-container div.title{
+    font-family: "Source Han Sans CN Regular";
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form{
+    float: left;
+    width: 100%;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left{
+    float: left;
+    width: 40%;
+    min-width: 200px;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left div.form-text,
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left a.form-link{
+    font-family: "Source Han Sans CN Light";
+    letter-spacing: 2px;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left div.form-text{
+    margin: 8px 0;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left a.form-link{
+    display: block;
+    font-family: "Source Han Sans CN Light";
+    color: #9f9d9b;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left input[type='text'],
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left input[type='password']{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30px;
+    border: solid #fec303 2px;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left button{
+    display: inherit;
+    margin: 30px auto;
+    height:24px;
+    width: 30%;
+    background-color: #fec303;
+    border: none;
+    border-radius: 2px;
+    font-family: "Source Han Sans CN Normal";
+    font-size: 15px;
+    color: white;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.login{
+    margin: 0 10% 0 10px;
+}
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.register{
+    clear:none;
+    text-align: center;
+}
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.register img{
+    margin-top: -30px;
+    margin-bottom: 6.4px;
+}
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.register div.brand-text{
+    font-family: "Source Han Sans CN Normal";
+    font-weight: bold;
+    margin: 10px 0;
+}
+div.modal-backdrop{
+    background-color: #000 !important;
+    opacity: 0.66 !important;
+}
+
+@media screen and (max-width: 768px){
+    div.modal div.modal-dialog{
+        width: 100%;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 520px){
+    div.login-register-dialog div.modal-dialog{
+        width: 80%;
+    }
+    div.login-register-dialog div div div.dialog-with-border{
+        min-height: 340px;
+    }
+    div.login-register-dialog div div div.dialog-with-border div.dialog-container{
+        width: 100%;
+    }
+    div.login-register-dialog div div div.dialog-with-border div.dialog-container div.title{
+        margin-bottom: 20px;
+    }
+    div.login-register-dialog div div div.dialog-with-border div.dialog-container form{
+        width: 90%;
+    }
+    div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left{
+        float: left;
+        margin: 0 10px;
+        width: 100%;
+        min-width: 200px;
+    }
+    div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left button{
+        display: inline;
+        margin: 30px 5%;
+    }
+}

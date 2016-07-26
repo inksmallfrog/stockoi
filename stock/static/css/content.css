@@ -1,0 +1,42 @@
+section.main div.content{
+    margin: -8ch auto 3% auto;
+    padding: 10px;
+    background: white;
+    min-width: 768px;
+    max-width: 60%;
+    min-height: 250px;
+}
+
+section.main div.content div.container-with-border{
+    padding: 10px auto 0px auto;
+    min-height: 150px;
+}
+
+section.main div.content div.main-container{
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    z-index: 9;
+}
+
+section.main div.content div.main-container div.title{
+    font-family: "Source Han Sans CN Regular";
+    font-size: 20px;
+}
+
+section.main div.content div.main-container div.echart{
+    height: 600px;
+}
+section.main div.content div.main-container div.echart#candlestick{
+}
+section.main div.content div.main-container div.echart#volume{
+}
+
+@media screen and (max-width: 768px){
+    section.main div.content{
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}

@@ -1,18 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
 <head>
-    <meta charset="UTF-8">
-    <title>Stockoi</title>
-    <script type="text/javascript" src="../static/js/echarts.js"></script>
+<meta charset="utf-8" />
+<title>EasyQiankun</title>
+<meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../static/css/app.v2.css" type="text/css" />
+
+<link rel="stylesheet" href="../static/css/global.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/header.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/top_picture.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/content.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/position_bar.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/dialog.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/strategy.css" type="text/css" cache="false" />
+<!--[if lt IE 9]> <script src="../static/js/ie/html5shiv.js" cache="false"></script> <script src="../static/js/ie/respond.min.js" cache="false"></script> <script src="../static/js/ie/excanvas.js" cache="false"></script> <![endif]-->
 </head>
+
 <body>
-<div id="k" style="width:1280px;height:900px">
+<!--页面-->
+<section class="vbox">
+  <!--导航栏-->
+  <div class="header-container">
+    <header class="header navbar navbar-fixed-top-xs">
+      <!--低分辨导航-->
+      <div class="navbar-header aside-md">
+        <a class="btn btn-link visible-xs" id="nav-xs-slider"><i class="fa fa-bars"></i></a>
+        <a href="#" class="navbar-brand" data-toggle="fullscreen">Alpha</a>
+        <!--用户菜单-->
+      </div>
+      <!--End 低分辨导航-->
+
+      <!--高分辨导航-->
+      <ul class="nav navbar-nav navbar-right hidden-xs nav-user">
+        <li class="hidden-xs">
+          <a href="#" class="menu-item active dropdown-toggle" data-toggle="dropdown" data="market">
+            行情资讯
+          </a>
+          <ul class="dropdown-menu">
+              <li> <a href="#">A股行情</a> </li>
+              <li> <a href="#">股指期货行情</a> </li>
+          </ul>
+        </li>
+        <li class="hidden-xs">
+          <a href="#" class="menu-item" data="strategies">
+            策略模型
+          </a>
+        </li>
+        <li class="hidden-xs">
+          <a href="#" class="menu-item">
+            订单管理
+          </a>
+        </li>
+        <li class="hidden-xs">
+          <a href="#" class="menu-item">
+            风险控制
+          </a>
+        </li>
+        <!--用户菜单-->
+        <li class="dropdown"></li>
+      </ul>
+      <!--End 高分辨导航-->
+    </header>
+    <div id="header-line" class="hidden-xs"></div>
+  </div>
+  <!--End 导航栏-->
+
+  <!--低分辨导航列表-->
+  <ul class="dropdown-menu" id="nav-xs">
+    <li class="visible-xs">
+        <a href="#" class="menu-item active dropdown-toggle" data-toggle="dropdown">
+            行情资讯
+        </a>
+        <ul class="dropdown-submenu">
+            <li> <a href="#">A股行情</a> </li>
+            <li> <a href="#">股指期货行情</a> </li>
+        </ul>
+    </li>
+    <li class="visible-xs">
+        <a href="#" class="menu-item">
+            策略模型
+        </a>
+    </li>
+    <li class="visible-xs">
+        <a href="#" class="menu-item">
+            订单管理
+        </a>
+    </li>
+    <li class="visible-xs">
+        <a href="#" class="menu-item">
+            风险控制
+        </a>
+    </li>
+  </ul>
+  <!--End 低分辨导航列表-->
+
+  <!--页面区域-->
+  <section class="scrollable slimScrollBar">
+      <!--顶部图片-->
+      <section class="top-section">
+        <div class="top-picture">
+          <img id="k-line" src="../static/assets/img/top_kline.png" class="hidden-xs">
+          <img id="img" src="../static/assets/img/top_img.png">
+        </div>
+      </section>
+      <!--End 顶部图片-->
+
+      <!--页面内容-->
+      <section class="main">
+        <div class="content">
+        <div class="container-with-border">
+        	<div id="k" style="width:100%;height:500px">
+        </div>
+        <div class="container-with-border">
+		<div id="real_time" style="width:100%;height:900px"></div>
+        </div>
+          <div class="container-with-border">
+            <!--边框-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" id="container-border">
+                <line x1="0" y1="0" x2="200px" y2="0" id="container-line-top"></line>
+                <line x1="100%" y1="0" x2="100%" y2="0" id="container-line-right"></line>
+                <line x1="0" y1="100%" x2="0" y2="100%" id="container-line-bottom"></line>
+            </svg>
+            <!--End 边框-->
+
+            <!--主内容-->
+            <div class="main-container" id="main-container">
+                <div class="title">测试内容</div>
+            </div>
+            <!--End 主内容-->
+          </div>
+        </div>
+      </section>
+      <!--End 页面内容-->
+
+      <!--定位栏-->
+      <section class="position-bar-section hidden-md hidden-xs hidden-sm">
+        <div class="bottom-right position-bar-box">
+            <div class="position-point position-current"></div>
+            <div class="position-item position-top"><div class="position-point"></div><a class="position-name" href="#" onclick="toPosition('顶部')">顶部</a></div>
+            <div class="position-item"><div class="position-point position-normal"></div><a class="position-name" href="#" onclick="toPosition('A股行情')">A股行情</a></div>
+            <div class="position-item"><div class="position-point position-normal"></div><a class="position-name" href="#" onclick="toPosition('期货行情')">期货行情</a></div>
+            <div class="position-item position-bottom"><div class="position-point"></div><a class="position-name" href="#" onclick="toPosition('底部')">底部</a></div>
+        </div>
+      </section>
+      <!--End 定位栏-->
+  </section>
+  <!--End 页面区域-->
+</section>
+<!--页面-->
+
+<!--登录注册窗口-->
+<div class="modal fade login-register-dialog" id="login-register" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="dialog-with-border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" id="dialog-border">
+                    <line x1="0" y1="0" x2="200px" y2="0" id="dialog-line-top"></line>
+                    <line x1="100%" y1="0" x2="100%" y2="0" id="dialog-line-right"></line>
+                    <line x1="0" y1="100%" x2="0" y2="100%" id="dialog-line-bottom"></line>
+                </svg>
+                <button class="dialog-close" data-dismiss="modal"></button>
+                <div class="dialog-container">
+                    <div class="title">登录</div>
+                    <form class="login-form" id="login-signup-form" action="loginandsignup" method="post">
+                        <div class="login left">
+                            <div class="form-text">用户名/email/手机号码</div>
+                            <input type="text" name="user_id">
+                            <div class="form-text">密码</div>
+                            <input type="password" name="pwd">
+                            <a href="#" class="form-link">忘记密码？</a>
+                            <input class="hide" name="action" type="text" id="action_type">
+                            <button type="submit" class="tiny-left" onclick="setAction('login')">登录</button>
+                            <button type="submit" class="show-tiny tiny-right" onclick="setAction('signup')">注册</button>
+                        </div>
+                        <div class="register left hidden-tiny">
+                            <img src="../static/assets/icons/brand.png">
+                            <div class="brand-text">加入我们！</div>
+                            <div class="brand-text">每月超高收益率</div>
+                            <div class="brand-text">等你参与！</div>
+                            <button type="submit" onclick="setAction('signup')">注册</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="real_time" style="width:1280px;height:900px"></div>
-<form id="emit">
-    <input id="emit_data" type="number" value="601333"/>
-</form>
-</body>
+<!--End 登录注册窗口-->
+<script src="../static/js/thirdParty/app.v2.js"></script> <!-- Bootstrap -->  <!-- App --> <script src="../static/js/charts/easypiechart/jquery.easy-pie-chart.js" cache="false"></script> <script src="../static/js/charts/sparkline/jquery.sparkline.min.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.min.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.tooltip.min.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.resize.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.grow.js" cache="false"></script> <script src="../static/js/charts/flot/demo.js" cache="false"></script> <script src="../static/js/calendar/bootstrap_calendar.js" cache="false"></script> <script src="../static/js/calendar/demo.js" cache="false"></script> <script src="../static/js/sortable/jquery.sortable.js" cache="false"></script>
+<script src="../static/js/thirdParty/jquery.cookie.js"></script>
+<script src="../static/js/thirdParty/jquery.form.js"></script>
+<script src="../static/js/user.js"></script>
+<script src="../static/js/template.js"></script>
+<script src="../static/js/config.js"></script>
+<script src="../static/js/main_container.js"></script>
+<script src="../static/js/login_register.js"></script>
+<script src="../static/js/strategy.js"></script>
+<script src="../static/js/position_bar.js"></script>
+<script src="../static/js/global.js"></script>
+<script src="../static/js/thirdParty/echarts.min.js"></script>
+<script src="../static/js/header.js"></script>
+<script src="../static/js/init.js"></script>
 <script type="text/javascript" src="../static/js/k.js"></script>
 <script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
 <script>
@@ -270,4 +459,6 @@
         }
     });
 </script>
+
+</body>
 </html>

@@ -1,0 +1,150 @@
+div#main-container div.strategy{
+    margin: 10px 3% 10px 3%;
+    width: 94%;
+}
+
+#main-container div.strategy div.strategy-box{
+    width: 100%;
+    border: solid 2px #ffda5f;
+    min-height: 66px;
+}
+#main-container div.strategy.disable div.strategy-box{
+    border: solid 2px #d9d9d9;
+}
+
+#main-container div.strategy div.strategy-box a.strategy-checker{
+    float:left;
+}
+
+#main-container div.strategy div.strategy-box a.strategy-slider{
+    width: 100%;
+}
+
+#main-container div.strategy div.strategy-box div.check-box{
+    padding: 10px 15px;
+    border-right: solid 1px white;
+    background-color: #ffda5f;
+}
+#main-container div.strategy.disable div.strategy-box div.check-box{
+    background-color: #d9d9d9;
+}
+
+#main-container div.strategy div.strategy-box div.text-box{
+    padding: 16px 16px 16px 100px;
+    background-color: #fff;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 23px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 5px;
+}
+#main-container div.strategy.disable div.strategy-box div.text-box{
+    color: #d9d9d9;
+}
+
+#main-container div.strategy.checked div.strategy-box div.text-box{
+    background-color: #ffda5f;
+    color: #fff;
+}
+
+#main-container div.strategy table.factors-table{
+    position: relative;
+    margin: 0 auto 30px auto;
+    width: 97.5%;
+    background-color: white;
+    border-color: #ffda5f;
+    border-style: solid;
+    z-index: 8;
+}
+
+.factors-table tbody tr{
+    height: 80px;
+}
+.factors-table tbody tr td{
+    width: 50%;
+}
+
+.factors-table div.factor img{
+    float:left;
+    padding: 12px 20px;
+    margin-right: 10px;
+}
+.factors-table .factor-info{
+    margin-left: 100px;
+    margin-right: 10px;
+}
+.factors-table div.factor div.factor-name{
+    padding-top: 10px;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 20px;
+}
+
+.factors-table div.factor div.factor-value{
+    font-family: "Source Han Sans CN Regular";
+    font-size: 18px;
+    color: #bdbdbd;
+}
+
+.factors-table div.factor input{
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px black;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 18px;
+    color: #bdbdbd;
+}
+
+.factors-table div.factor input:focus{
+    outline: none;
+}
+
+#main-container div.strategy div.factors-dropdown{
+    position: relative;
+}
+
+#main-container div.strategy div.factors-dropdown div.border-line{
+    position: absolute;
+    background-color: #ffda5f;
+    width: 40px;
+    height: 40px;
+    z-index: 0;
+}
+
+#main-container div.strategy div.factors-dropdown div.left_corner{
+    bottom: -10px;
+}
+
+#main-container div.strategy div.factors-dropdown div.right_corner{
+    right: 0px;
+    bottom: -10px;
+}
+
+@media screen and (max-width: 520px){
+    .factors-table .factor-info{
+        margin-left: 77px;
+    }
+    .factors-table div.factor img{
+        width:75px;
+        margin-right: 2px;
+    }
+    .factors-table div.factor div.factor-name{
+        font-size: 14px;
+    }
+    .factors-table div.factor div.factor-value{
+        font-size: 12px;
+    }
+}
+
+.strategy-form button{
+    display: block;
+    margin: 30px auto;
+    padding: 10px 22px 10px 30px;
+    background-color: #ffda5f;
+    border: none;
+    outline: none;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 8px;
+}
