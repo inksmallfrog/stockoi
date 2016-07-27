@@ -1,14 +1,14 @@
 #coding:utf-8
 import tushare as ts
 from stock import *
+from stock.conf import TIMEFORMAT,OPENTIME,CLOSETIME
 from flask_socketio import emit,SocketIO
-from json import *
 from functools import wraps
+import pandas as pd
+import time
 
 
 socketio = SocketIO(app)
-from signal import signal, SIGPIPE, SIG_DFL
-signal(SIGPIPE,SIG_DFL)
 
 def allow_cross_domain(fun):
     @wraps(fun)
@@ -41,20 +41,28 @@ def hello():
         res[i][0] = res[i][0].encode("utf-8")
         list[i] = [res[i][x] for x in range(0,5)]
 
+    list.reverse()
+
     #分时图
-    df = ts.get_today_ticks(default_code)
-    r_columns = ['time','price','volume','amount','pchange']
-    df = df.loc[:,r_columns]
-    df = df.to_records()
-    length2 = len(df)
-    list2 = [[]for i in range(0,length2)]
+    #有效时间: 9:30-15:00
+    current_time = time.strftime("%I:%M:%S")
+    if current_time >= OPENTIME and current_time <= CLOSETIME:
+        df = ts.get_today_ticks(default_code)
+        r_columns = ['time','price','volume','amount','pchange']
+        df = df.loc[:,r_columns]
+        df = df.to_records()
+        length2 = len(df)
+        list2 = [[]for i in range(0,length2)]
+        for x in range(0,length2)[::-1]:
+            temp = [df[x][y] for y in range(0,6)]
+            print type(temp[0])
+            temp[1] = (pd.to_datetime(str(temp[1]))).strftime("%I:%M:%S")
+            list2[length2-x-1] = temp
 
-    for x in range(0,length2)[::-1]:
-        temp = [df[x][y] for y in range(0,6)]
-        list2[length2-x-1] = temp
-
-    return render_template("index.html",res = list,history_data = list2)
-    # return render_template("index.html",history_data = list2)
+        return render_template("index.html",res = list,history_data = list2)
+        # return render_template("index.html",history_data = list2)
+    else:
+        return render_template("index.html",res = list)
 
 
 @app.route("/data/hours")

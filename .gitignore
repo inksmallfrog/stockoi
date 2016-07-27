@@ -1,2 +1,7 @@
-/*.pyc
+*.pyc
+/stock/algorithm/*.pyc
+/stock/controller/*.pyc
+/stock/model/*.pyc
+/stock/view/*.pyc
 !.gitignore
+将删除 stock/static/src/

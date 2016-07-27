@@ -437,7 +437,7 @@
         }]
     };
     real_time_chart.setOption(option);
-    socket.emit('real_time', {data: document.getElementById('emit_data').getAttribute('value')});
+    socket.emit('real_time', {data:'600848'});
     socket.on('res', function(msg) {
         // ['index','time','price','volume','amount','code','name','bid','ask','date']
         history_data.push([msg.data[0],msg.data[1],msg.data[2]]);
@@ -455,7 +455,7 @@
 
         }else{
 
-            socket.emit('real_time', {'data': document.getElementById('emit_data').getAttribute('value')});
+            socket.emit('real_time', {'data': '600848'});
         }
     });
 </script>
