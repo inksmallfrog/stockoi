@@ -95,6 +95,7 @@ def recv_message(message):
     length = len(current_columns)
     for i in range(0,length+1):
         list.append(res[0][i])
+    list[1] = (pd.to_datetime(str(list[1]))).strftime("%I:%M:%S")
     emit('res', {'data': list})
 
 
