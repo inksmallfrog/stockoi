@@ -385,7 +385,7 @@
 <script>
     //分时图的有效数据：当日 时间，价格，涨跌幅，成交手，成交金额
     var real_time_chart = echarts.init(document.getElementById('real_time'));
-    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    var socket = io.connect('http://' + document.domain + ':' + location.port+'/hours');
     var history_data = {{history_data|safe}};
     var data1 = splitHistoryData(history_data);
 
@@ -439,6 +439,7 @@
     real_time_chart.setOption(option);
     socket.emit('real_time', {data:'600848'});
     socket.on('res', function(msg) {
+        console.log(msg);
         // ['index','time','price','volume','amount','code','name','bid','ask','date']
         history_data.push([msg.data[0],msg.data[1],msg.data[2]]);
         data1 = splitHistoryData(history_data);

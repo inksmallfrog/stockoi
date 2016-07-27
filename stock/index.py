@@ -55,7 +55,6 @@ def hello():
         list2 = [[]for i in range(0,length2)]
         for x in range(0,length2)[::-1]:
             temp = [df[x][y] for y in range(0,6)]
-            print type(temp[0])
             temp[1] = (pd.to_datetime(str(temp[1]))).strftime("%I:%M:%S")
             list2[length2-x-1] = temp
 
@@ -85,9 +84,10 @@ def hours():
     return jsonify(list2)
 
 
-@socketio.on('real_time')
+@socketio.on('real_time',namespace='/hours')
 def recv_message(message):
     data = ts.get_realtime_quotes(message['data'])
+    print data
     current_columns =['time','price','volume','amount','code','name','bid','ask','date']
     raw_data = data.loc[:,current_columns]
     res = raw_data.to_records()
