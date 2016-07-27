@@ -385,7 +385,7 @@
 <script>
     //分时图的有效数据：当日 时间，价格，涨跌幅，成交手，成交金额
     var real_time_chart = echarts.init(document.getElementById('real_time'));
-    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    var socket = io.connect('http://127.0.0.1:5000');
     var history_data = {{history_data|safe}};
     var data1 = splitHistoryData(history_data);
 
