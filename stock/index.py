@@ -45,7 +45,7 @@ def hello():
 
     #分时图
     #有效时间: 9:30-15:00
-    current_time = time.strftime("%I:%M:%S")
+    current_time = time.strftime("%H:%M:%S")
     if current_time >= OPENTIME and current_time <= CLOSETIME:
         df = ts.get_today_ticks(default_code)
         r_columns = ['time','price','volume','amount','pchange']
