@@ -82,14 +82,14 @@ def hours():
     return jsonify(list2)
 
 
-def ack():
-    print 'message was received!'
+# def ack():
+#     print 'message was received!'
 
 
 @socketio.on('real_time',namespace='/hours')
 def recv_message(message):
-    data = ts.get_realtime_quotes(message['data'])
-    print data
+    # data = ts.get_realtime_quotes(message['data'])
+    # print data
     emit('res',{'data':'hello'})
     # current_columns =['time','price','volume','amount','code','name','bid','ask','date']
     # raw_data = data.loc[:,current_columns]
