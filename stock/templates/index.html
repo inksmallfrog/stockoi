@@ -437,27 +437,26 @@
         }]
     };
     real_time_chart.setOption(option);
-    socket.emit('real_time', {data:'600848'});
-    socket.on('res', function(msg) {
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    socket.on('connect', function() {
+        socket.emit('request', {data: '600848'});
+    });
+    socket.on('response', function(msg){
         console.log(msg);
-        if(!msg.error){
-            // ['index','time','price','volume','amount','code','name','bid','ask','date']
-            history_data.push([msg.data[0],msg.data[1],msg.data[2]]);
-            data1 = splitHistoryData(history_data);
-
-            real_time_chart.setOption({
+        history_data.push([msg.data[0],msg.data[1],msg.data[2]]);
+        data1 = splitHistoryData(history_data);
+        real_time_chart.setOption({
                 xAxis: {
                     data:data1.categoryData
                 },
                 series: [{
                     data: data1.values
                 }]
-            });
-            if(data1.categoryData[data1.categoryData.length-1] == '15:00:00'){
+        });
+        if(data1.categoryData[data1.categoryData.length-1] == '15:00:00'){
                 console.log('finished!');
-            }else{
-                socket.emit('real_time', {'data': '600848'});
-            }
+        }else{
+                 socket.emit('request', {data: '600848'});
         }
     });
 </script>

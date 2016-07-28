@@ -188,6 +188,7 @@
     </div>
 </div>
 <!--End 登录注册窗口-->
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script src="../static/js/thirdParty/app.v2.js"></script> <!-- Bootstrap -->  <!-- App --> <script src="../static/js/charts/easypiechart/jquery.easy-pie-chart.js" cache="false"></script> <script src="../static/js/charts/sparkline/jquery.sparkline.min.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.min.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.tooltip.min.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.resize.js" cache="false"></script> <script src="../static/js/charts/flot/jquery.flot.grow.js" cache="false"></script> <script src="../static/js/charts/flot/demo.js" cache="false"></script> <script src="../static/js/calendar/bootstrap_calendar.js" cache="false"></script> <script src="../static/js/calendar/demo.js" cache="false"></script> <script src="../static/js/sortable/jquery.sortable.js" cache="false"></script>
 <script src="../static/js/thirdParty/jquery.cookie.js"></script>
 <script src="../static/js/thirdParty/jquery.form.js"></script>
@@ -204,14 +205,9 @@
 <script src="../static/js/init.js"></script>
 <script type="text/javascript" src="../static/js/k.js"></script>
 <script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-<script>
-    var socket = io.connect('http://' + document.domain + ':' + location.port+'/hours');
-    socket.emit('real_time', {data:'600848'});
-    socket.on('res', function(msg) {
-        console.log(msg);
-        socket.emit('real_time', {'data': '600848'});
-    });
+
+<script type="text/javascript" charset="utf-8">
+
 </script>
 
 </body>
