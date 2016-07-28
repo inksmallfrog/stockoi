@@ -25,61 +25,62 @@ def allow_cross_domain(fun):
 
 @app.route("/")
 def hello():
-    default_code = '600848'
-    default_start = '2016-01-01'
-    default_end = '2016-05-31'
-
-    # k线图
-    k_data_min = ts.get_hist_data(code=default_code,start=default_start,end=default_end,ktype='D')
-    k_columns = ['open','close','high','low']
-    k_data_min_core = k_data_min.loc[:,k_columns]
-    res = k_data_min_core.to_records()
-
-    length = len(res)
-    list = [[] for i in range(0,length)]
-
-    for i in range(0,length):
-        res[i][0] = res[i][0].encode("utf-8")
-        list[i] = [res[i][x] for x in range(0,5)]
-
-    list.reverse()
-
-    # 分时图
-    # 有效时间: 9:30-15:00
-    current_time = time.strftime("%H:%M:%S")
-    if current_time >= OPENTIME:
-        df = ts.get_today_ticks(default_code)
-        r_columns = ['time','price','volume','amount','pchange']
-        df = df.loc[:,r_columns]
-        df = df.to_records()
-        length2 = len(df)
-        list2 = [[]for i in range(0,length2)]
-        for x in range(0,length2)[::-1]:
-            temp = [df[x][y] for y in range(0,6)]
-            temp[1] = (pd.to_datetime(str(temp[1]))).strftime("%I:%M:%S")
-            list2[length2-x-1] = temp
-        return render_template("index.html",res = list,history_data = list2)
-        # return render_template("index.html",history_data = list2)
-    else:
-        return render_template("index.html",res = list)
-
-
-@app.route("/data/hours")
-@allow_cross_domain
-def hours():
-    default_code = '600848'
-    default_start = '2016-01-01'
-    default_end = '2016-05-31'
-    df = ts.get_today_ticks(default_code)
-    r_columns = ['time','price','volume','amount','pchange']
-    df = df.loc[:,r_columns]
-    df = df.to_records()
-    length2 = len(df)
-    list2 = [[]for i in range(0,length2)]
-    for x in range(0,length2)[::-1]:
-        temp = [df[x][y] for y in range(0,6)]
-        list2[length2-x-1] = temp
-    return jsonify(list2)
+    return render_template("test.html")
+#     default_code = '600848'
+#     default_start = '2016-01-01'
+#     default_end = '2016-05-31'
+#
+#     # k线图
+#     k_data_min = ts.get_hist_data(code=default_code,start=default_start,end=default_end,ktype='D')
+#     k_columns = ['open','close','high','low']
+#     k_data_min_core = k_data_min.loc[:,k_columns]
+#     res = k_data_min_core.to_records()
+#
+#     length = len(res)
+#     list = [[] for i in range(0,length)]
+#
+#     for i in range(0,length):
+#         res[i][0] = res[i][0].encode("utf-8")
+#         list[i] = [res[i][x] for x in range(0,5)]
+#
+#     list.reverse()
+#
+#     # 分时图
+#     # 有效时间: 9:30-15:00
+#     current_time = time.strftime("%H:%M:%S")
+#     if current_time >= OPENTIME:
+#         df = ts.get_today_ticks(default_code)
+#         r_columns = ['time','price','volume','amount','pchange']
+#         df = df.loc[:,r_columns]
+#         df = df.to_records()
+#         length2 = len(df)
+#         list2 = [[]for i in range(0,length2)]
+#         for x in range(0,length2)[::-1]:
+#             temp = [df[x][y] for y in range(0,6)]
+#             temp[1] = (pd.to_datetime(str(temp[1]))).strftime("%I:%M:%S")
+#             list2[length2-x-1] = temp
+#         return render_template("index.html",res = list,history_data = list2)
+#         # return render_template("index.html",history_data = list2)
+#     else:
+#         return render_template("index.html",res = list)
+#
+#
+# @app.route("/data/hours")
+# @allow_cross_domain
+# def hours():
+#     default_code = '600848'
+#     default_start = '2016-01-01'
+#     default_end = '2016-05-31'
+#     df = ts.get_today_ticks(default_code)
+#     r_columns = ['time','price','volume','amount','pchange']
+#     df = df.loc[:,r_columns]
+#     df = df.to_records()
+#     length2 = len(df)
+#     list2 = [[]for i in range(0,length2)]
+#     for x in range(0,length2)[::-1]:
+#         temp = [df[x][y] for y in range(0,6)]
+#         list2[length2-x-1] = temp
+#     return jsonify(list2)
 
 
 # def ack():
