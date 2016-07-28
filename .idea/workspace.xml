@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8de96b0b-0bd4-468b-af7e-f02f84ff699f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/algorithm/select_money_flow.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/algorithm/__init__.py" afterPath="$PROJECT_DIR$/stock/algorithm/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/conf.default.py" afterPath="$PROJECT_DIR$/stock/conf.default.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/index.py" afterPath="$PROJECT_DIR$/stock/index.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/templates/index.html" afterPath="$PROJECT_DIR$/stock/templates/index.html" />
     </list>
     <ignored path="stock.iws" />
@@ -38,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.518518">
-              <caret line="436" column="10" selection-start-line="436" selection-start-column="10" selection-end-line="436" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.75398636">
+              <caret line="442" column="53" selection-start-line="442" selection-start-column="53" selection-end-line="442" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -78,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stock/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6022099">
+            <state vertical-scroll-proportion="0.0">
               <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
               <folding />
             </state>
@@ -126,8 +121,8 @@
         <option value="$PROJECT_DIR$/stock/conf.default.py" />
         <option value="$PROJECT_DIR$/stock/algorithm/__init__.py" />
         <option value="$PROJECT_DIR$/stock/algorithm/select_money_flow.py" />
-        <option value="$PROJECT_DIR$/stock/templates/index.html" />
         <option value="$PROJECT_DIR$/stock/index.py" />
+        <option value="$PROJECT_DIR$/stock/templates/index.html" />
       </list>
     </option>
   </component>
@@ -878,18 +873,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/stock/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.518518">
-          <caret line="436" column="10" selection-start-line="436" selection-start-column="10" selection-end-line="436" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/index.py">
+    <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6022099">
-          <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.75398636">
+          <caret line="442" column="53" selection-start-line="442" selection-start-column="53" selection-end-line="442" selection-end-column="53" />
           <folding />
         </state>
       </provider>
