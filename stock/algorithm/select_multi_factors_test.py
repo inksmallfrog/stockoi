@@ -1,9 +1,8 @@
-#coding:utf-8
+# coding:utf-8
 import tushare as ts
 from svmutil import *
 
-
-#因子选择：流通市值 市净率 市销率 PE 当周换手率/前一周换手率 主营业务同比增长率 ROE 现金流量/营业收入
+# 因子选择：流通市值 市净率 市销率 PE 当周换手率/前一周换手率 主营业务同比增长率 ROE 现金流量/营业收入
 # 流通市值：流通股本×当前股票价格
 # 市净率
 # pe 市盈率
@@ -31,34 +30,34 @@ raw_data = ts.get_stock_basics()
 # timeToMarket,上市日期
 raw_data_today = ts.get_today_all()
 
-    # code：代码
-    # name:名称
-    # changepercent:涨跌幅
-    # trade:现价 1
-    # open:开盘价
-    # high:最高价
-    # low:最低价
-    # settlement:昨日收盘价
-    # volume:成交量
-    # turnoverratio:换手率
+# code：代码
+# name:名称
+# changepercent:涨跌幅
+# trade:现价 1
+# open:开盘价
+# high:最高价
+# low:最低价
+# settlement:昨日收盘价
+# volume:成交量
+# turnoverratio:换手率
 
 raw_data_history = ts.get_hist_data()
 
-    # date：日期
-    # open：开盘价
-    # high：最高价
-    # close：收盘价
-    # low：最低价
-    # volume：成交量
-    # price_change：价格变动
-    # p_change：涨跌幅
-    # ma5：5日均价
-    # ma10：10日均价
-    # ma20:20日均价
-    # v_ma5:5日均量
-    # v_ma10:10日均量
-    # v_ma20:20日均量
-    # turnover:换手率[注：指数无此项] 4/4
+# date：日期
+# open：开盘价
+# high：最高价
+# close：收盘价
+# low：最低价
+# volume：成交量
+# price_change：价格变动
+# p_change：涨跌幅
+# ma5：5日均价
+# ma10：10日均价
+# ma20:20日均价
+# v_ma5:5日均量
+# v_ma10:10日均量
+# v_ma20:20日均量
+# turnover:换手率[注：指数无此项] 4/4
 
 raw_data_profit = ts.get_profit_data()
 # code,代码
@@ -95,5 +94,3 @@ raw_data_growth = ts.get_growth_data()
 # targ,总资产增长率
 # epsg,每股收益增长率
 # seg,股东权益增长率
-
-
