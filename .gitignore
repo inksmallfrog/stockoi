@@ -4,4 +4,5 @@
 /stock/model/*.pyc
 /stock/view/*.pyc
 !.gitignore
+.idea/*
 将删除 stock/static/src/

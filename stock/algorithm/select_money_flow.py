@@ -111,7 +111,7 @@ def calculate_index(scode, start_date, end_date):
         return None
 
 
-# Define a thread function to calculate the scores for a piece of codes
+# Define a thread function to calculate the score for a piece of codes
 def thread_func(codes, start_date, end_date):
     all_index = []
     for i in range(len(codes)):
@@ -122,15 +122,15 @@ def thread_func(codes, start_date, end_date):
     q.put(all_index)
 
 
-# Deploy the thread function to calculate all the scores
+# Deploy the thread function to calculate all the score
 def get_score(start_date, end_date):
 
-    if os.path.exists('./score/' + start_date + '.csv'):
-        csv_file = open('./score/' + start_date + '.csv', 'rb')
+    if os.path.exists('./score/' + start_date + '-' + end_date + '.csv'):
+        csv_file = open('./score/' + start_date + '-' + end_date + '.csv', 'rb')
         reader = csv.reader(csv_file)
         final = []
         for line in reader:
-            final.append(line)
+            final.append(list(line))
         csv_file.close()
         return final
 
@@ -186,13 +186,13 @@ def get_score(start_date, end_date):
 
     final = sorted(all_index, key=lambda index: index[6], reverse=True)
 
-    csv_file = open('./score/' + start_date + '.csv', 'wb')
+    csv_file = open('./score/' + start_date + '-' + end_date + '.csv', 'wb')
     writer = csv.writer(csv_file)
     writer.writerows(final)
     csv_file.close()
 
 
-# Calculate all the scores for all the codes with the one-year time slot
+# Calculate all the score for all the codes with the one-year time slot
 # Prepare for the back-test
 def get_all_scores(start='2015-01-01', end='2015-12-31'):
     sd = time.strptime(start, '%Y-%m-%d')
@@ -208,4 +208,5 @@ def get_all_scores(start='2015-01-01', end='2015-12-31'):
             rstart.strftime('%Y-%m-%d'), rend.strftime('%Y-%m-%d')))
 
 
-get_all_scores('2015-01-01', '2015-12-31')
+# get_all_scores('2015-01-01', '2015-12-31')
+get_score('2015-01-01', '2015-01-07')
