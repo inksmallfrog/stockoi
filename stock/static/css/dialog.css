@@ -12,7 +12,28 @@ div.login-register-dialog div.modal-dialog div.modal-content{
 }
 
 div.login-register-dialog div div div.dialog-with-border{
+    position: relative;
     min-height: 330px;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.border#dialog-top{
+    position: absolute;
+    width: 150px;
+    height: 10px;
+}
+div.login-register-dialog div div div.dialog-with-border div.border#dialog-bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 75px;
+    height: 10px;
+}
+div.login-register-dialog div div div.dialog-with-border div.border#dialog-right{
+    position: absolute;
+    right: 0;
+    bottom:0;
+    width: 10px;
+    height: 75px;
 }
 
 div.login-register-dialog div div div.dialog-with-border button.dialog-close{
@@ -39,18 +60,44 @@ div.login-register-dialog div div div.dialog-with-border div.dialog-container di
     font-family: "Source Han Sans CN Regular";
     font-weight: bold;
     font-size: 25px;
-    margin-bottom: 30px;
 }
 
 div.login-register-dialog div div div.dialog-with-border div.dialog-container form{
     float: left;
     width: 100%;
+    padding-top: 30px;
 }
 
 div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left{
+    position: relative;
     float: left;
     width: 40%;
     min-width: 200px;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left .error-tip{
+    position: absolute;
+    width:100%;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left .error-tip .error-tip-triangle{
+    position: absolute;
+    top: -10px;
+    left: 47%;
+    display: inline-block;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid rgba(254, 195, 3, 0.8);
+    content: '';
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left .error-tip .error-tip-content{
+    width: 100%;
+    height: 25px;
+    padding-top: 5px;
+    background-color: rgba(254, 195, 3, 0.8);
+    text-align: center;
+    font-family: "Source Han Sans CN Regular";
 }
 
 div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left div.form-text,
@@ -67,6 +114,10 @@ div.login-register-dialog div div div.dialog-with-border div.dialog-container fo
     display: block;
     font-family: "Source Han Sans CN Light";
     color: #9f9d9b;
+}
+
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left input:focus{
+    outline: none;
 }
 
 div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.left input[type='text'],
@@ -91,17 +142,43 @@ div.login-register-dialog div div div.dialog-with-border div.dialog-container fo
 }
 
 div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.login{
-    margin: 0 10% 0 10px;
+    margin: 0 8% 0 10px;
+}
+div.login-register-dialog div div div.dialog-with-border div.dialog-container form .seperate-line{
+    float:left;
+    width: 1px;
+    margin-top:-30px;
+    background-color: #fec303;
+    height: 250px;
 }
 div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.register{
     clear:none;
-    text-align: center;
+    margin-left: 5%;
 }
-div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.register img{
+.signup-tips{
+    z-index: 10;
+    position: absolute;
+    width: 45%;
+    text-align: center;
+    background-color: white;
+    left: 53%;
+
+    -webkit-transition: left 1s;
+    -moz-transition: left 1s;
+    -ms-transition: left 1s;
+    -o-transition: left 1s;
+    transition: left 1s;
+}
+
+.signup-tips.login{
+    left:0;
+}
+
+.signup-tips img{
     margin-top: -30px;
     margin-bottom: 6.4px;
 }
-div.login-register-dialog div div div.dialog-with-border div.dialog-container form div.register div.brand-text{
+.signup-tips div.brand-text{
     font-family: "Source Han Sans CN Normal";
     font-weight: bold;
     margin: 10px 0;
@@ -118,7 +195,7 @@ div.modal-backdrop{
     }
 }
 
-@media screen and (max-width: 520px){
+@media screen and (max-width: 550px){
     div.login-register-dialog div.modal-dialog{
         width: 80%;
     }

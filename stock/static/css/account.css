@@ -1,0 +1,211 @@
+.accounts-panel{
+    position: absolute;
+    float:left;
+    width: 65%;
+    left: 35%;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: left 1s;
+    -moz-transition: left 1s;
+    -ms-transition: left 1s;
+    -o-transition: left 1s;
+    transition: left 1s;
+}
+
+.account-container{
+    float:left;
+    width: 100%;
+}
+
+.accounts-panel .account-id-box{
+    position: relative;
+    text-align: center;
+    padding: 1.2vw 0;
+
+    font-family: "Courier New";
+    font-size: 2vw;
+}
+
+.account-id-add{
+    color: #fec303;
+}
+.account-id-add:hover {
+    color: #fec303 !important;
+}
+
+.accounts-panel .account-id-box .account-quit{
+    position: absolute;
+    top: 0;
+    right: 1vw;
+}
+
+.accounts-panel .account-id-box .account-id-underline{
+    position: absolute;
+    bottom: 1vw;
+    left: 46%;
+    width: 8%;
+    height:5%;
+    background-color: #fec303;
+}
+
+.accounts-panel .account-detail-box{
+    float: left;
+    width: 35%;
+    padding: 1.06vw 2vw;
+    background-color: #373c32;
+
+    text-align: right;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.6vw;
+}
+
+.account-detail-box .account-detail-value{
+    letter-spacing: 0.5vw;
+    color: #fec303;
+}
+
+.account-detail-box .account-detail-tip{
+    margin-top: -0.4vw;
+    margin-bottom: 0.4vw;
+    padding-right: 0.5vw;
+    color: white;
+}
+
+.account-market-header{
+    float: left;
+    width: 65%;
+    background-color: #fec303;
+
+    text-align: center;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.3vw;
+}
+
+.account-market-box{
+    float:left;
+    width: 65%;
+    max-height: 23vw;
+    text-align: center;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1vw;
+}
+
+.account-market-code{
+    float:left;
+    width: 10%;
+}
+.account-market-price,
+.account-market-cost{
+    float:left;
+    width: 12%;
+}
+.account-market-market{
+    float: left;
+    width: 19%;
+}
+
+.account-market-name{
+    float: left;
+    width: 17%;
+}
+.account-market-vol,
+.account-market-profit{
+    float: left;
+    width: 15%;
+}
+
+.account-market-item span{
+    background-color: #f9f2dc;
+    border: 0.1vw solid white;
+    padding: 0.2vw 0;
+    min-height: 1.91vw;
+}
+
+.account-market-item.focus span{
+    background-color: #fee181;
+}
+
+#account-add .modal-dialog{
+    width: 25% !important;
+}
+
+#account-add .modal-content{
+    padding-right: 20px !important;
+}
+
+.account-add-modal-close{
+    position: absolute;
+    right: 0;
+}
+.account-add-modal-close img{
+    width: 50%;
+}
+
+.account-add-type{
+    float:left;
+    width: 100%;
+    border: 0.2vw solid #fec303;
+    margin-top: 2.5vw;
+}
+
+.account-type-button{
+    float:left;
+    width: 50%;
+    font-size: 1.6vw;
+    padding: 0.7vw 0;
+
+    background-color: transparent;
+
+    font-family: "Source Han Sans CN Regular";
+    color: #ffe180;
+}
+
+.account-type-button.focus{
+    background-color: #fec303;
+    color: white;
+}
+
+.account-type-button.disable{
+    background-color: #5e5e5e;
+    color: #25231f;
+}
+
+#account-add{
+    font-family: "Source Han Sans CN Regular" !important;
+}
+
+#account-add .account-add-input{
+    width: 100%;
+    margin-top: 1vw;
+    padding: 0.7vw;
+    border: 0.2vw solid #fec303;
+    font-size: 1.6vw;
+    color: #fec303;
+}
+
+#account-add .account-add-button{
+    width: 40%;
+    margin: 1vw 30%;
+    padding: 0.7vw;
+
+    font-size: 1.6vw;
+    background-color: #fec303;
+    color: white;
+}
+
+#account-add .account-add-input::-webkit-input-placeholder {
+    color: #fec303;
+}
+#account-add .account-add-input:-moz-placeholder {
+    /* FF 4-18 */
+    color: #fec303;
+}
+#account-add .account-add-input::-moz-placeholder {
+    /* FF 19+ */
+    color: #fec303;
+}
+#account-add .account-add-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #fec303;
+}

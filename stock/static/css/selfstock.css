@@ -1,0 +1,96 @@
+div.selfstock-panel{
+    float: left;
+    background: url("../assets/background/self_stock_bg.png") no-repeat;
+    background-size: 100% 100%;
+    width: 35%;
+    height: 100%;
+}
+
+div.selfstcok-container{
+    width: 100%;
+    height: 100%;
+    padding: 15% 10%;
+    background-color: rgba(254, 192, 3, 0.79);
+}
+
+div.selfstock-box{
+    width: 100%;
+    height: 100%;
+    padding: 8% 0 2.5% 0;
+    background-color: rgba(37, 35, 31, 0.2);
+}
+
+.selfstock-box div.panel-title{
+    margin-left: 8%;
+    margin-bottom: 4%;
+    color:#25231f;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 2vw;
+}
+
+.selfstock-box ul.selfstock-list{
+    min-height: 85%;
+}
+
+.selfstock-box ul.selfstock-list li.selfstock-item{
+    position: relative;
+    padding: 2% 1% 2% 8%;
+    margin-top: 1px;
+    width: 100%;
+    background-color: rgba(37, 35 ,31, 0.2);
+}
+
+.selfstock-box ul.selfstock-list li a{
+    width: 80%;
+    display: inline-block;
+
+    font-family: "Source Han Sans CN Regular";
+    font-size: 16px;
+    color: #25231f;
+}
+
+.selfstock-box ul.selfstock-list li span.stock-name{
+    padding-left: 20%;
+}
+
+.selfstock-box ul.selfstock-list li a.delete-icon{
+    display: inline-block;
+    position: absolute;
+    width: 5%;
+    right: 6%;
+    top: 12%;
+}
+
+.selfstock-box div.panel-page{
+    padding: 1% 8%;
+    height: 6%;
+}
+
+.selfstock-box .panel-page .page-button{
+    background-color: rgba(37, 35 ,31, 0.2);
+    width: 28%;
+    height: 100%;
+    text-align: center;
+    font-family: "Source Han Sans CN Regular";
+    color: #25231f;
+    font-size: 1vw;
+    letter-spacing: 0.1vw;
+}
+.selfstock-box .panel-page .page-tip{
+    float:left;
+    width: 44%;
+    padding: 3% 0;
+    height: 100%;
+    text-align: center;
+    font-family: "Source Han Sans CN Regular";
+    color: #25231f;
+    font-size: 1vw;
+    letter-spacing: 0.1vw;
+}
+
+.page-button.back{
+    float:left;
+}
+.page-button.next{
+    float:right;
+}

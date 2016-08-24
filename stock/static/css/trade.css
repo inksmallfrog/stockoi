@@ -1,0 +1,227 @@
+.trade-panel{
+    float:left;
+    width: 50%;
+    background-color: #25231f;
+}
+
+.trade-panel .trade-target{
+    float: left;
+    margin-right: 5%;
+    height: 28.3vw;
+    width: 5%;
+}
+
+.trade-panel .trade-target button{
+    width: 100%;
+    height: 50%;
+    background-color: #5e5e5e;
+    color: #25231f;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.5vw;
+}
+
+.trade-panel .trade-target button.focus{
+    background-color: #25231f;
+    color: #fec303;
+    border-left: solid 0.2vw #fec303;
+}
+
+.trade-panel .trade-container{
+    float: left;
+    padding-top: 1.4vw;
+    width: 90%;
+    height: 100%;
+}
+
+.trade-panel .trade-container .trade-container-left{
+    float:left;
+    width: 56%;
+    height: 100%;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.8vw;
+}
+
+.trade-panel .trade-container .trade-container-left .trade-box-with-border{
+    float:left;
+    width: 100%;
+    border: 0.2vw solid #fec303;
+    margin: 1vw 0;
+}
+
+.trade-container .stock-info{
+    position: relative;
+}
+
+.trade-container .stock-info .stock-info-code{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fec303;
+    padding: 0.3vw 1.6vw;
+}
+.trade-container .stock-info input{
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 0.6vw 1.6vw;
+    color: #fec303;
+    text-align: center;
+}
+.trade-container .stock-info .stock-info-name{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fec303;
+    padding: 0.3vw 1.6vw;
+}
+.trade-container .stock-info .stock-info-name{
+    text-align: right;
+}
+
+.trade-container .trade-price .trade-price-minus,
+.trade-container .trade-price .trade-price-add{
+    float:left;
+    position: relative;
+    width: 16%;
+    padding: 0.6vw 1.6vw;
+
+    background-color: #fec303;
+
+    text-align: center;
+    color: #25231f;
+}
+.trade-container .trade-price .trade-price-button-tip{
+    position: absolute;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0.2vw;
+}
+.trade-container .trade-price input{
+    float: left;
+    width: 68%;
+    padding: 0.6vw 1.6vw;
+
+    background: transparent;
+
+    text-align: center;
+    color: #fec303;
+}
+
+.trade-container .trade-price-tip{
+    float:left;
+    width: 100%;
+    font-size: 1vw;
+}
+.trade-container .trade-price-tip .trade-price-tip-min,
+.trade-container .trade-price-tip .trade-price-tip-max{
+    float: left;
+    width: 50%;
+}
+
+.trade-container .trade-price-tip .trade-price-tip-max{
+    text-align: right;
+}
+
+.trade-container .trade-counts{
+    position: relative;
+}
+.trade-container .trade-counts .trade-counts-tip,
+.trade-container .trade-counts .trade-counts-has{
+    float:left;
+    width: 50%;
+    padding: 0.6vw 1.6vw;
+    color: #fec303;
+    opacity: 0.15;
+}
+.trade-container .trade-counts .trade-counts-has{
+    text-align: right;
+}
+.trade-container .trade-counts input{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 0.6vw 1.6vw;
+    background: transparent;
+
+    text-align: center;
+    color: #fec303;
+}
+.trade-container .trade-button{
+    float:left;
+    margin-top: 0.8vw;
+    padding: 0.6vw 0;
+    width: 42%;
+    background: #fec303;
+    text-align: center;
+}
+
+.trade-container .trade-button#stock-trade-button-buy,
+.trade-container .trade-button#future-trade-button-buy{
+    margin-right: 16%;
+}
+
+.trade-container .trade-container-right{
+    float:left;
+    width: 44%;
+    padding: 0 7%;
+    font-family: "Source Han Sans CN Regular";
+}
+
+.trade-container-right ul{
+    float:left;
+    margin: 0;
+
+}
+
+.trade-container-right ul li{
+    margin: 0.3vw 0;
+    font-size: 1.5vw;
+}
+
+.trade-container-right ul li a,
+.trade-container-right ul li a:hover{
+    color:#929191;
+}
+
+.trade-container-right ul li .tip,
+.trade-container-right ul li .price{
+    margin-right: 1vw;
+}
+
+.trade-container-right .trade-future-type-tip{
+    margin-top: 0.6vw;
+    margin-bottom: 0.5vw;
+
+    font-family: "Source Han Sans CN Regular";
+    font-size: 2vw;
+    color: #fec303;
+    text-align: center;
+}
+
+.trade-container-right button.future-trade-button{
+    width: 95%;
+    height: 3.5vw;
+    margin: 0.8vw 2.5%;
+    background: transparent;
+    border: 0.3vw solid rgba(2, 2, 2, 0.25);
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.5vw;
+    color: rgba(2, 2, 2, 0.25);
+}
+
+.trade-container-right button.future-trade-button.focus{
+    border: 0.3vw solid #fec303;
+    color: #fec303;
+}
+
+.trade-container-right .future-trade-tip{
+    font-family: "Source Han Sans CN Regular";
+    color: #fec303;
+    font-size: 0.1vw;
+}
+
+.trade-container-right .future-trade-tip.first{
+    margin-top: 1.8vw;
+}

@@ -124,21 +124,20 @@ def thread_func(codes, start_date, end_date):
 
 # Deploy the thread function to calculate all the score
 def get_score(start_date, end_date):
-
-    if os.path.exists('./score/' + start_date + '-' + end_date + '.csv'):
-        csv_file = open('./score/' + start_date + '-' + end_date + '.csv', 'rb')
+    if os.path.exists('score/' + start_date + '-' + end_date + '.csv'):
+        print "File exits!"
+        csv_file = open('score/' + start_date + '-' + end_date + '.csv', 'rb')
         reader = csv.reader(csv_file)
         final = []
         for line in reader:
             final.append(list(line))
         csv_file.close()
         return final
-
     codes = get_valid_codes()
     length = len(codes)
     all_index = []
-    remainder = length % 20
-    times = length // 20
+    remainder = length % 30
+    times = length // 30
     threads = []
     if remainder > 0:
         times += 1
@@ -146,11 +145,11 @@ def get_score(start_date, end_date):
         if i < times - 1:
             thread = Thread(
                 target=thread_func,
-                args=(codes[i * 20:(i + 1) * 20 - 1], start_date, end_date))
+                args=(codes[i * 30:(i + 1) * 30 - 1], start_date, end_date))
         else:
             thread = Thread(
                 target=thread_func,
-                args=(codes[i * 20:],
+                args=(codes[i * 30:],
                       start_date,
                       end_date,))
         threads.append(thread)
@@ -158,6 +157,8 @@ def get_score(start_date, end_date):
         threads[i].start()
     for i in range(0, len(threads)):
         threads[i].join()
+        print "Thread {0} Finished!".format(i)
+    print "Threads Finished!"
     while not q.empty():
         all_index.extend(q.get())
 
@@ -209,4 +210,4 @@ def get_all_scores(start='2015-01-01', end='2015-12-31'):
 
 
 # get_all_scores('2015-01-01', '2015-12-31')
-get_score('2015-01-01', '2015-01-07')
+# get_score('2015-01-01', '2015-01-07')

@@ -1,0 +1,239 @@
+div.stockdetail-panel{
+    float: left;
+    width: 65%;
+    height: 100%;
+
+    padding: 1% 2%;
+}
+
+.stockdetail-panel .search-box{
+    margin-bottom: 1.5%;
+}
+
+.stockdetail-panel .search-box .search-box-tip{
+    position: relative;
+    display: inline-block;
+
+    padding: 0.6vw 0.6vw 0.8vw 0.6vw;
+    margin-right: -0.3vw;
+    width: 8%;
+    min-width: 50px;
+    background-color: #e5e5e5;
+
+    font-family: "Source Han Sans CN Normal";
+    font-size: 1.1vw;
+    text-align: center;
+    letter-spacing: 2px;
+    color:black;
+}
+
+.search-box-tip-dropdown{
+    margin: 0.8vw 0 0 0;
+    padding: 0;
+    min-width: 5vw;
+
+    background-color: #e5e5e5;
+    font-family: "Source Han Sans CN Normal";
+    font-size: 1vw;
+    text-align: center;
+}
+.search-box-tip-dropdown .up-triangle{
+    position: absolute;
+    top: -2vw;
+    left: 1.3vw;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border-top: 1.2vw solid transparent;
+    border-left: 1.2vw solid transparent;
+    border-bottom: 1.2vw solid #e5e5e5;
+    border-right: 1.2vw solid transparent;
+}
+.search-box-tip-dropdown .search-box-tip-change{
+    padding: 0.5vw 0;
+    margin: 0;
+}
+
+.search-box-tip-dropdown .search-box-tip-change:hover{
+    background-color: #fec303 !important;
+    color: black !important;
+}
+
+.search-box-tip .triangle-right-bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 0.6vw solid transparent;
+    border-left: 0.6vw solid transparent;
+    border-bottom: 0.6vw solid #fec303;
+    border-right: 0.6vw solid #fec303;
+}
+
+.stocklist-select-box{
+    display: inline-block;
+}
+
+.combo-select.stocklist-combo{
+    margin: 0;
+    border-radius: 0;
+    border-color: #e5e5e5;
+}
+
+.combo-select.stocklist-combo input{
+    border-radius: 0;
+
+    padding: 0.8vw;
+    padding-right: 12vw;
+}
+
+.stockdetail-panel .search-box button{
+    background-color: #fec303;
+    margin-left: -0.1vw;
+    padding: 0.6vw 0.6vw 0.8vw 0.6vw;
+    width: 8%;
+    min-width: 50px;
+    text-align: center;
+
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.1em;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.stockdetail-panel .stocklist-time-box{
+    display: inline-block;
+    width: 30%;
+}
+.stocklist-time-box span{
+    font-size: 2vw;
+    margin-right: -0.3vw;
+}
+.stocklist-time-box input{
+    width: 30%;
+    border: 0.1vw solid #e5e5e5;
+    padding: 0.6vw 0.6vw 0.8vw 0.6vw;
+    font-family: "Source Han Sans CN Normal";
+    text-align: center;
+}
+
+.stockdetail-panel .stockdetail-box{
+    width: 100%;
+    height: 14%;
+    min-height: 95px;
+    margin-bottom: 2%;
+}
+
+.stockdetail-box .detail-left{
+    float: left;
+    height: 100%;
+    width: 25%;
+    margin-right: 1%;
+}
+
+.detail-left .detail-name{
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.74vw;
+    letter-spacing: 0.1vw;
+    min-height: 28px;
+}
+
+.detail-left .detail-price{
+    position: relative;
+    margin: -5% 0;
+    font-family: SourceHanSansBold;
+    font-size: 3.0vw;
+    min-height: 48px;
+}
+.detail-left .detail-price img{
+    position: absolute;
+    right: 0;
+    top: 1.3vw;
+    width: 2vw;
+    margin-top: -4%;
+}
+
+.detail-left .detail-updown{
+    font-family: "Source Han Sans CN Regular";
+    font-size: 2.1vw;
+    letter-spacing: 0.1vw;
+}
+
+.detail-updown .updown{
+    float: left;
+}
+.detail-updown .scale{
+    float: right;
+}
+
+.stockdetail-box .detail-right{
+    float: left;
+    width: 69%;
+    height: 100%;
+    background-color: #e5e5e5;
+
+    border-bottom: solid #fec303 4px;
+}
+
+.detail-right .detail-layer{
+    float: left;
+    height: 50%;
+    width: 100%;
+}
+
+.detail-right .detail-layer .detail-box{
+    float: left;
+    width: 20%;
+    padding: 2% 0;
+    text-align: center;
+
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.0vw;
+}
+
+.detail-right .detail-layer .detail-box .detail-value{
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1.4vw;
+}
+
+.detail-right .detail-layer .detail-box .detail-value .unit{
+    margin-left: 2px;
+
+    font-family: "Source Han Sans CN Regular";
+    font-size: 0.2vw;
+}
+
+.stockdetail-box .selfstock-selector{
+    float: left;
+    height: 100%;
+    background-color: #fec303;
+    margin-left: 2px;
+    padding: 6px 0.5% 0 0.5%;
+    font-family: "Source Han Sans CN Regular";
+    font-size: 1vw;
+    color: white;
+    writing-mode: vertical-lr;
+    letter-spacing: 0.3vw;
+}
+
+.stockdetail-panel .graph-box{
+    width: 100%;
+    height: 65%;
+}
+
+.stockdetail-panel .graph-type ul{
+    padding-left: 17%;
+}
+
+.stockdetail-panel .graph-type ul li a{
+    float: left;
+    background-color:  #e5e5e5;
+    padding: 2% 8%;
+    border-bottom: solid 3px #e5e5e5;
+}
+
+.stockdetail-panel .graph-type ul li a.current{
+    background-color:  white;
+    border-bottom: solid 3px #fec303;
+}

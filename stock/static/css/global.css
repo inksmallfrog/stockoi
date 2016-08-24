@@ -1,53 +1,63 @@
-body{
-    background: #d9d9d9;
-    background-size: 100% auto;
-    font-family: "Source Han Sans CN Normal";
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+.vbox{
+    background-color: white;
 }
 
-svg{
-    position: absolute;
-    z-index: 0;
+a{
+    color: inherit;
+    text-underline: none;
+}
+a:hover{
+    color: inherit;
+}
+a:focus{
+    color: inherit;
 }
 
-svg line{
-    stroke: #fec303;
-    stroke-width: 23px;
+li{
+    list-style: none;
 }
 
-.dropdown-hide{
+.temp-hide{
     display: none;
 }
 
+.show-tiny{
+    display: none !important;
+}
+
+div.border{
+    background-color: #fec303;
+}
+
+.price-up{
+    color: #c33430 !important;
+}
+
+.price-down{
+    color: #37c330 !important;
+}
+
+.hide-right{
+    left: 100% !important;
+}
+
 @media screen and (max-width: 768px){
-    section.scrollable.slimScrollBar{
+    .slimScrollBar{
         display: inherit !important;
     }
 }
 
-@media screen and (min-width: 520px){
-    .show-tiny {
-        display: none !important;
+@media screen and (max-width: 550px){
+    .hide-tiny{
+        display: none;
     }
-    .hidden-tiny {
-        display: inherit;
-    }
-    .tiny-left,
-    .tiny-right{
-        float: none;
-    }
-}
-
-@media screen and (max-width: 520px) {
-    .show-tiny {
-        display: inherit;
-    }
-    .hidden-tiny {
-        display: none !important;
-    }
-    .tiny-left{
-        float: left;
-    }
-    .tiny-right{
-        float: right;
+    .show-tiny{
+        display: inherit !important;
     }
 }

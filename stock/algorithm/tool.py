@@ -51,14 +51,15 @@ def DownLoadHistory(start_date, end_date):
                 codes[i], start=start, end=end, ktype='D')
             raw_data = raw_data.loc[:, ['open', 'high', 'low', 'close', 'volume']]
             raw_data['Adj Close'] = pd.Series(0, index=raw_data.index)
-            raw_data.columns = ['Date', 'Open', 'High', 'Low', 'Close', 'Volume', 'Adj Close']
+            raw_data.columns = ['Open', 'High', 'Low', 'Close', 'Volume', 'Adj Close']
+            raw_data.index = (pd.Series(raw_data.index.values, name='Date'))
             raw_data.to_csv(
                 '../algorithm/data/' + start + '-to-' + end + '-' + codes[i] +
                 '.csv',
                 columns=[
-                    'open', 'close', 'volume'
+                    'Open', 'High', 'Low', 'Close', 'Volume', 'Adj Close'
                 ])
             print "Done!"
 
 
-DownLoadHistory('2015-01-01', '2015-12-31')
+# DownLoadHistory('2015-01-01', '2015-12-31')

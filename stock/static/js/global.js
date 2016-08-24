@@ -1,68 +1,58 @@
 /**
- * Created by inksmallfrog on 2016/7/19.
+ * Created by inksmallfrog on 2016/8/10.
+ * 功能：处理初始化事件
  */
-function init_global(){
+
+var user;            //用户对象
+var stock;              //股票对象
+
+var header;             //导航头模块对象
+var selfstock;          //自选股模块对象
+var stock_detail;       //股票详情模块对象
+var trade;
+var order_detail;
+var account;
+var strategies;
+
+$(document).ready(function(){
+    user = new User();
+    stock = new Stock();
+
+    header = new Header();
+    selfstock = new SelfStock();
+    stock_detail = new StockDetail();
+    trade = new Trade();
+    order_detail = new OrderDetail();
+    account = new Account();
+    strategies = new Strategies();
+
+    user.init();
+    stock.init();
+
+    header.init();
+    selfstock.init();
+    stock_detail.init();
+    trade.init();
+    order_detail.init();
+    account.init();
+    strategies.init();
+
+    stock_detail.show();
+
     $(window).resize(function(){
-        $(".open").removeClass("open");
-        underlineToActive();
-        position_bar_data[current_page]['底部'] = $(".scrollable")[0].scrollHeight - $(window).height();
-        calculate_current_pos($(".scrollable").scrollTop());
+        header.resizeUnderline();
+        stock_detail.stock_graph.stock_chart.resize();
     });
 
-    $("header").resize(function(){
-        underlineToActive();
-    });
+    stock.changeStock("000001SH");
+    setInterval("update()", UPDATE_TIMEOUT);
+});
 
-    $(".scrollable").scroll(function(){
-        var currentPos = $(".scrollable").scrollTop();
-        if(currentPos > fixed_position_bar_pos && !position_bar_box.hasClass("fixed")){
-            position_bar_box.addClass("fixed");
-        }
-        else if(currentPos < fixed_position_bar_pos && position_bar_box.hasClass("fixed")){
-            position_bar_box.removeClass("fixed");
-        }
-        calculate_current_pos(currentPos);
-    });
-}
+//全局更新函数，调用间隔：UPDATE_TIMEOUT
+function update(){
+    stock.update();
 
-function calculate_current_pos(currentPos){
-    var posbar_config = position_bar_data[current_page];
-    var keys = Object.keys(posbar_config);
-    for (var i = 0; i < keys.length - 1; ++i){
-        if(currentPos > posbar_config[keys[i]] && currentPos <= posbar_config[keys[i + 1]]){
-            var position_pos = (55.0 / (posbar_config[keys[i + 1]] - posbar_config[keys[i]])) * (currentPos - posbar_config[keys[i]]);
-            position_current.css("top", 13 + i * 55 + position_pos);
-            return;
-        }
-    }
-}
-
-function init_current_page(){
-    main_container.html(container_content[current_page]);
-    position_bar_box.html(buildPositionBarContent(current_page));
-    if(current_page == "strategies"){
-        init_strategies_page();
-    }
-    init_position_bar();
-}
-
-function resetBorder(border_name){
-    var width = $("." + border_name + "-with-border").outerWidth();
-    var height = $("." + border_name + "-with-border").outerHeight();
-
-    $("svg#" + border_name + "-border").attr("width", width);
-    $("svg#" + border_name + "-border").attr("height", height);
-
-    var line_top = $("#" + border_name + "-line-top");
-    var line_bottom = $("#" + border_name + "-line-bottom");
-    var line_right = $("#" + border_name + "-line-right");
-
-    line_top.attr("x1", "0");
-    line_top.attr("x2", width / 3.667 + "px");
-
-    line_bottom.attr("x1", width - 100 + "px");
-    line_bottom.attr("x2", "100%");
-
-    line_right.attr("y1", height - 100 + "px");
-    line_right.attr("y2", "100%");
+    header.update();
+    trade.update();
+    account.update();
 }
