@@ -44,7 +44,8 @@ def get_valid_codes():
     length = len(stock_basics)
 
     month_ago_date = datetime.datetime.now() - datetime.timedelta(days=31)
-    date_to = datetime.date(month_ago_date.year, month_ago_date.month, month_ago_date.day)
+    date_to = datetime.date(month_ago_date.year, month_ago_date.month,
+                            month_ago_date.day)
     month_ago_digit = date_to.year * 10000 + date_to.month * 100 + date_to.day
 
     for i in range(0, length):
@@ -83,10 +84,12 @@ def calculate_index(scode, start_date, end_date):
             curr_mf_factor = 0
         else:
             curr_mf_factor = (curr_record[3] * 100) * (curr_record[2]) * (
-                (curr_record[2] - prev_record[2]) / abs(curr_record[2] - prev_record[2]))
+                (curr_record[2] - prev_record[2]) /
+                abs(curr_record[2] - prev_record[2]))
         total_ff += curr_mf_factor
 
-    raw_data_history = ts.get_h_data(code=scode, start=start_date, end=end_date, retry_count=3)
+    raw_data_history = ts.get_h_data(
+        code=scode, start=start_date, end=end_date, retry_count=3)
 
     if raw_data_history is not None:
         amount = raw_data_history.loc[:, ['amount']]
@@ -207,7 +210,6 @@ def get_all_scores(start='2015-01-01', end='2015-12-31'):
         get_score(rstart.strftime('%Y-%m-%d'), rend.strftime('%Y-%m-%d'))
         print("Finished for {0} to {1}".format(
             rstart.strftime('%Y-%m-%d'), rend.strftime('%Y-%m-%d')))
-
 
 # get_all_scores('2015-01-01', '2015-12-31')
 # get_score('2015-01-01', '2015-01-07')

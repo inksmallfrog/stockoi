@@ -60,7 +60,8 @@ class Stock(db.Model):
     profit = db.Column(DECIMAL(10, 5), default=0)
     associate_account = db.Column(String(120))
 
-    def __init__(self, code, name, maket_price, cost_price, maket_value, amount, profit, account):
+    def __init__(self, code, name, maket_price, cost_price, maket_value, amount,
+                 profit, account):
         self.code = code
         self.name = name
         self.market_price = maket_price
@@ -89,7 +90,8 @@ class MyOrder(db.Model):
     date_time = db.Column(DateTime)
     associate_id = db.Column(String(80))
 
-    def __init__(self, trade_id, code, name, o_type, status, price, count, finished, maket_value, dt, a_id):
+    def __init__(self, trade_id, code, name, o_type, status, price, count,
+                 finished, maket_value, dt, a_id):
         self.id = trade_id
         self.code = code
         self.name = name
@@ -119,7 +121,8 @@ class Account(db.Model):
     brokerage = db.Column(String(120))
     account_type = db.Column(String(120))
 
-    def __init__(self, id,a_id,remain,frozen,market_value,total,profit_loss,password, brokerage, t):
+    def __init__(self, id, a_id, remain, frozen, market_value, total,
+                 profit_loss, password, brokerage, t):
         self.account_id = id
         self.associate_id = a_id
         self.remain = remain

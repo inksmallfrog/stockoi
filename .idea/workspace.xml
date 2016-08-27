@@ -2,56 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8de96b0b-0bd4-468b-af7e-f02f84ff699f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/assets/background/self_stock_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/assets/fonts/SourceHanSansCN-Bold.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/assets/icons/price_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/assets/icons/price_up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/assets/icons/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/account.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/combo.select.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/detailstock.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/fonts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/orderdetail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/selfstock.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/stock.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/strategies.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/css/trade.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/Account.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/Header.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/OrderDetail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/SelfStock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/Stock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/StockDetail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/StockGraph.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/Strategies.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/Trade.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/User.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/test/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/test/stocklist.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/thirdParty/echarts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/thirdParty/jQuerySession.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/thirdParty/jquery-3.1.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/thirdParty/jquery.combo.select.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/thirdParty/jquery.tablesorter.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stock/templates/test.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/stock/strategies/__init__.py" afterPath="$PROJECT_DIR$/stock/model/models.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/stock/strategies/money_flow_backtest.py" afterPath="$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/assets/icons/delete.png" afterPath="$PROJECT_DIR$/stock/static/assets/icons/delete.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/__init__.py" afterPath="$PROJECT_DIR$/stock/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py" afterPath="$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/algorithm/select_money_flow.py" afterPath="$PROJECT_DIR$/stock/algorithm/select_money_flow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/algorithm/tool.py" afterPath="$PROJECT_DIR$/stock/algorithm/tool.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/conf.py" afterPath="$PROJECT_DIR$/stock/conf.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/index.py" afterPath="$PROJECT_DIR$/stock/index.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/model/model_admin.py" afterPath="$PROJECT_DIR$/stock/model/model_admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/css/dialog.css" afterPath="$PROJECT_DIR$/stock/static/css/dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/css/global.css" afterPath="$PROJECT_DIR$/stock/static/css/global.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/css/header.css" afterPath="$PROJECT_DIR$/stock/static/css/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/css/top_picture.css" afterPath="$PROJECT_DIR$/stock/static/css/top_picture.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/config.js" afterPath="$PROJECT_DIR$/stock/static/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/global.js" afterPath="$PROJECT_DIR$/stock/static/js/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/template.js" afterPath="$PROJECT_DIR$/stock/static/js/template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/model/models.py" afterPath="$PROJECT_DIR$/stock/model/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/Trade.js" afterPath="$PROJECT_DIR$/stock/static/js/Trade.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/templates/index.html" afterPath="$PROJECT_DIR$/stock/templates/index.html" />
     </list>
     <ignored path="stock.iws" />
@@ -65,9 +26,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/stock$run.coverage" NAME="run Coverage Results" MODIFIED="1471918641545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stock$run.coverage" NAME="run Coverage Results" MODIFIED="1472270004981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stock$tool.coverage" NAME="tool Coverage Results" MODIFIED="1471411008427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/algorithm" />
-    <SUITE FILE_PATH="coverage/stock$index.coverage" NAME="index Coverage Results" MODIFIED="1471846312041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock" />
+    <SUITE FILE_PATH="coverage/stock$index.coverage" NAME="index Coverage Results" MODIFIED="1472265956983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock" />
     <SUITE FILE_PATH="coverage/stock$config.coverage" NAME="config Coverage Results" MODIFIED="1471158363361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/strategies" />
     <SUITE FILE_PATH="coverage/stock$getdata.coverage" NAME="getdata Coverage Results" MODIFIED="1471177796597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/strategies" />
     <SUITE FILE_PATH="coverage/stock$money_flow.coverage" NAME="money_flow Coverage Results" MODIFIED="1471435126889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/algorithm" />
@@ -82,11 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="138">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -94,38 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock/model/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#62#0" expanded="true" />
-                <element signature="e#175#1326#0" expanded="false" />
-                <element signature="e#1356#2184#0" expanded="false" />
-                <element signature="e#2216#3192#0" expanded="false" />
-                <element signature="e#3224#4536#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stock/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6066">
-              <caret line="529" column="24" selection-start-line="529" selection-start-column="24" selection-end-line="529" selection-end-column="24" />
+            <state relative-caret-position="644">
+              <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
               <folding>
                 <element signature="e#30#43#0" expanded="true" />
-                <element signature="e#583#984#0" expanded="false" />
-                <element signature="e#1042#1155#0" expanded="false" />
-                <element signature="e#1191#1227#0" expanded="false" />
-                <element signature="e#1317#1854#0" expanded="false" />
-                <element signature="e#11485#14522#0" expanded="false" />
-                <element signature="e#11559#12768#0" expanded="false" />
-                <element signature="e#12873#14467#0" expanded="false" />
-                <element signature="e#18822#19286#0" expanded="false" />
-                <element signature="e#19345#19833#0" expanded="false" />
+                <element signature="e#17093#18048#0" expanded="false" />
+                <element signature="e#18116#18751#0" expanded="false" />
+                <element signature="e#18823#19275#0" expanded="false" />
+                <element signature="e#19343#19985#0" expanded="false" />
+                <element signature="e#20060#20584#0" expanded="false" />
+                <element signature="e#20665#21278#0" expanded="false" />
+                <element signature="e#21344#21808#0" expanded="false" />
+                <element signature="e#21867#22355#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -134,8 +78,76 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stock/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trade.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/Trade.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5405">
+              <caret line="309" column="142" selection-start-line="309" selection-start-column="108" selection-end-line="309" selection-end-column="144" />
+              <folding>
+                <element signature="e#205#2939#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Account.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/Account.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1909">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7544">
+              <caret line="328" column="65" selection-start-line="328" selection-start-column="65" selection-end-line="328" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/model/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="47" column="31" selection-start-line="5" selection-start-column="0" selection-end-line="47" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#62#0" expanded="true" />
+                <element signature="e#2233#3226#0" expanded="false" />
+                <element signature="e#3258#4594#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/model/model_admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -158,13 +170,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/conf.py" />
         <option value="$PROJECT_DIR$/controller/init.py" />
         <option value="$PROJECT_DIR$/init.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/model/model_admin.py" />
-        <option value="$PROJECT_DIR$/stock/__init__.py" />
         <option value="$PROJECT_DIR$/stock/view/__init__.py" />
         <option value="$PROJECT_DIR$/stock/view/index.py" />
         <option value="$PROJECT_DIR$/stock/static/js/k.js" />
@@ -191,24 +201,26 @@
         <option value="$PROJECT_DIR$/stock/algorithm/tool.py" />
         <option value="$PROJECT_DIR$/stock/static/js/StockGraph.js" />
         <option value="$PROJECT_DIR$/stock/static/js/Stock.js" />
-        <option value="$PROJECT_DIR$/stock/conf.py" />
         <option value="$PROJECT_DIR$/stock/model/LoginForm.py" />
         <option value="$PROJECT_DIR$/stock/static/js/JquerySession.js" />
         <option value="$PROJECT_DIR$/stock/static/js/thirdParty/JQuerySession.js" />
         <option value="$PROJECT_DIR$/stock/static/js/SelfStock.js" />
-        <option value="$PROJECT_DIR$/stock/templates/index.html" />
         <option value="$PROJECT_DIR$/stock/static/js/User.js" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/stock/model/User.py" />
         <option value="$PROJECT_DIR$/stock/model/Account.py" />
         <option value="$PROJECT_DIR$/stock/static/js/Account.js" />
-        <option value="$PROJECT_DIR$/stock/model/model_admin.py" />
         <option value="$PROJECT_DIR$/stock/model/Order.py" />
         <option value="$PROJECT_DIR$/stock/static/js/OrderDetail.js" />
         <option value="$PROJECT_DIR$/stock/model/Stock.py" />
         <option value="$PROJECT_DIR$/stock/model/MyOrder.py" />
         <option value="$PROJECT_DIR$/stock/model/models.py" />
+        <option value="$PROJECT_DIR$/stock/__init__.py" />
+        <option value="$PROJECT_DIR$/stock/static/js/Trade.js" />
+        <option value="$PROJECT_DIR$/stock/templates/index.html" />
+        <option value="$PROJECT_DIR$/stock/model/model_admin.py" />
         <option value="$PROJECT_DIR$/stock/index.py" />
+        <option value="$PROJECT_DIR$/stock/conf.py" />
       </list>
     </option>
   </component>
@@ -220,9 +232,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="y" value="54" />
+    <option name="width" value="1835" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -268,6 +280,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -318,52 +331,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stockoi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stockoi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stock" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../future/future-honor" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -746,10 +722,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="65" y="54" width="1835" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17191818" sideWeight="0.49386504" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2174399" sideWeight="0.49386504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5085683" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -763,7 +739,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25678498" sideWeight="0.7429519" order="2" side_tool="false" content_ui="tabs" x="12" y="551" width="1895" height="40" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5862069" sideWeight="0.7429519" order="2" side_tool="false" content_ui="tabs" x="12" y="551" width="1895" height="40" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.49143174" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -823,7 +799,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stock/login" />
     <entry file="file://$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1058">
@@ -1007,35 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python2.7/json/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4209">
-          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/model/model_admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="80" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="429" column="75" selection-start-line="429" selection-start-column="59" selection-end-line="429" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/Account.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2329">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock/static/js/SelfStock.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-190">
@@ -1054,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3036">
           <caret line="132" column="2" selection-start-line="132" selection-start-column="2" selection-end-line="132" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,9 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding>
-            <marker date="1471610692303" expanded="true" signature="734:747" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1080,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,97 +1028,108 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/model/User.py" />
+    <entry file="file://$PROJECT_DIR$/stock/model/Stock.py" />
+    <entry file="file://$PROJECT_DIR$/stock/model/Account.py" />
+    <entry file="file://$PROJECT_DIR$/stock/model/MyOrder.py" />
+    <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7544">
+          <caret line="328" column="65" selection-start-line="328" selection-start-column="65" selection-end-line="328" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/Account.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1909">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/json/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/model/model_admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stock/static/js/Trade.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6624">
-          <caret line="288" column="5" selection-start-line="288" selection-start-column="5" selection-end-line="288" selection-end-column="5" />
+        <state relative-caret-position="5405">
+          <caret line="309" column="142" selection-start-line="309" selection-start-column="108" selection-end-line="309" selection-end-column="144" />
+          <folding>
+            <element signature="e#205#2939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/model/User.py">
+    <entry file="file://$PROJECT_DIR$/stock/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/model/Stock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="27" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/model/Account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="41" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/model/MyOrder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="32" selection-end-column="37" />
+        <state relative-caret-position="391">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stock/model/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        <state relative-caret-position="529">
+          <caret line="47" column="31" selection-start-line="5" selection-start-column="0" selection-end-line="47" selection-end-column="31" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
-            <element signature="e#175#1326#0" expanded="false" />
-            <element signature="e#1356#2184#0" expanded="false" />
-            <element signature="e#2216#3192#0" expanded="false" />
-            <element signature="e#3224#4536#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#2233#3226#0" expanded="false" />
+            <element signature="e#3258#4594#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stock/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6066">
-          <caret line="529" column="24" selection-start-line="529" selection-start-column="24" selection-end-line="529" selection-end-column="24" />
+        <state relative-caret-position="644">
+          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
           <folding>
             <element signature="e#30#43#0" expanded="true" />
-            <element signature="e#583#984#0" expanded="false" />
-            <element signature="e#1042#1155#0" expanded="false" />
-            <element signature="e#1191#1227#0" expanded="false" />
-            <element signature="e#1317#1854#0" expanded="false" />
-            <element signature="e#11485#14522#0" expanded="false" />
-            <element signature="e#11559#12768#0" expanded="false" />
-            <element signature="e#12873#14467#0" expanded="false" />
-            <element signature="e#18822#19286#0" expanded="false" />
-            <element signature="e#19345#19833#0" expanded="false" />
+            <element signature="e#17093#18048#0" expanded="false" />
+            <element signature="e#18116#18751#0" expanded="false" />
+            <element signature="e#18823#19275#0" expanded="false" />
+            <element signature="e#19343#19985#0" expanded="false" />
+            <element signature="e#20060#20584#0" expanded="false" />
+            <element signature="e#20665#21278#0" expanded="false" />
+            <element signature="e#21344#21808#0" expanded="false" />
+            <element signature="e#21867#22355#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

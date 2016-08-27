@@ -6,7 +6,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 db = SQLAlchemy(app)
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, encoding='utf-8')
 DBSession = sessionmaker(bind=engine)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
-

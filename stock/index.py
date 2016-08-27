@@ -13,6 +13,7 @@ from model.model_admin import DBSession
 from flask_socketio import emit, SocketIO
 from model.models import *
 from stock import *
+from decimal import *
 # from conf import OPENTIME
 
 socket_io = SocketIO(app)
@@ -49,18 +50,16 @@ def hello():
 @allow_cross_domain
 def add_account():
     form = request.form
-    
     user_id = form.get('user_id')
     account_type = form.get('type')
     brokerage = form.get('brokerage')
     account_id = form.get('id')
     pwd = form.get('pwd')
-    
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
-
     if user is not None:
-        new_account = Account(account_id, user_id, 10000.00, 0, 0, 10000.00, 0, pwd, brokerage, account_type)
+        new_account = Account(account_id, user_id, 10000.00, 0, 0, 10000.00, 0,
+                              pwd, brokerage, account_type)
         db_session.add(new_account)
         db_session.commit()
         db_session.close()
@@ -80,9 +79,17 @@ def get_account_data():
     user = db_session.query(User).filter_by(username=user_id).first()
 
     if user is not None:
-        account = db_session.query(Account).filter_by(associate_id=user_id, account_type=a_type).first()
+        account = db_session.query(Account).filter_by(
+            associate_id=user_id, account_type=a_type).first()
         stock_list = []
-        stock_origin = db_session.query(Stock).filter_by(associate_account=account.account_id).all()
+        stock_origin = None
+        if account is not None:
+            stock_origin = db_session.query(Stock).filter_by(
+                associate_account=account.account_id).all()
+        else:
+            return jsonify({
+                'error': 'Account error!'
+            })
         for record in stock_origin:
             row = {
                 'code': record.code,
@@ -95,16 +102,14 @@ def get_account_data():
             }
             stock_list.append(row)
         if account is not None and account.account_id == account_id:
-            return jsonify(
-                {
-                    "balance": str(account.remain),
-                    "freezing": str(account.frozen),
-                    "market": str(account.market_value),
-                    "total": str(account.total),
-                    "profit": str(account.profit_loss),
-                    "detail": stock_list
-                }
-            )
+            return jsonify({
+                "balance": str(account.remain),
+                "freezing": str(account.frozen),
+                "market": str(account.market_value),
+                "total": str(account.total),
+                "profit": str(account.profit_loss),
+                "detail": stock_list
+            })
         else:
             return None
 
@@ -123,15 +128,16 @@ def get_stock_data():
         "code": code,
         "name": name,
         "abbr": abbr,
-        "price": float((df.loc[:, ['price']]).to_records()[0][1]),
-        "open": float((df.loc[:, ['open']]).to_records()[0][1]),
-        "close": float((df.loc[:, ['pre_close']]).to_records()[0][1]),
-        "high": float((df.loc[:, ['high']]).to_records()[0][1]),
-        "low": float((df.loc[:, ['low']]).to_records()[0][1]),
+        "price": str(Decimal((df.loc[:, ['price']]).to_records()[0][1])),
+        "open": str(Decimal((df.loc[:, ['open']]).to_records()[0][1])),
+        "close": str(Decimal((df.loc[:, ['pre_close']]).to_records()[0][1])),
+        "high": str(Decimal((df.loc[:, ['high']]).to_records()[0][1])),
+        "low": str(Decimal((df.loc[:, ['low']]).to_records()[0][1])),
         "max": 0,
         "min": 0,
         "vol": int((df.loc[:, ['volume']]).to_records()[0][1]),
-        "value": int((df.loc[:, ['volume']]).to_records()[0][1]) * float((df.loc[:, ['price']]).to_records()[0][1]),
+        "value": str(int((df.loc[:, ['volume']]).to_records()[0][1]) *
+                        Decimal((df.loc[:, ['price']]).to_records()[0][1])),
     }
     return jsonify(res)
 
@@ -177,11 +183,7 @@ def get_stock_graph_data():
             list_m[i] = [k_data_rec_m[i][x] for x in range(0, 5)]
             list_m[i][0] = list_m[i][0].replace('-', '/')
         list_m.reverse()
-        return jsonify(
-            {
-                'data': list_m
-            }
-        )
+        return jsonify({'data': list_m})
     elif user_type == 'graph-weekly':
         k_data_min_w = ts.get_hist_data(
             code=code, start=start_date, end=default_end, ktype='W')
@@ -194,11 +196,7 @@ def get_stock_graph_data():
             list_w[i] = [k_data_rec_w[i][x] for x in range(0, 5)]
             list_w[i][0] = list_w[i][0].replace('-', '/')
         list_w.reverse()
-        return jsonify(
-            {
-                'data': list_w
-            }
-        )
+        return jsonify({'data': list_w})
     else:
         k_data_min_d = ts.get_hist_data(
             code=code, start=start_date, end=default_end, ktype='D')
@@ -211,9 +209,7 @@ def get_stock_graph_data():
             list_d[i] = [k_data_rec_d[i][x] for x in range(0, 5)]
             list_d[i][0] = list_d[i][0].replace('-', '/')
         list_d.reverse()
-        return jsonify({
-            'data': list_d
-        })
+        return jsonify({'data': list_d})
 
 
 @app.route("/getuseraccount", methods=['POST'])
@@ -225,13 +221,15 @@ def get_user_account():
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
     if user is not None:
-        account = db_session.query(Account).filter_by(associate_id=user_id, account_type=a_type).first()
+        account = db_session.query(Account).filter_by(
+            associate_id=user_id, account_type=a_type).first()
         if account is not None:
-            return jsonify({
-                'id': account.account_id
-            })
+            return jsonify({'id': account.account_id})
         else:
-            return None
+            return jsonify({
+                'id': '',
+                'error': 'Account error!'
+            })
 
 
 @app.route('/login', methods=['POST'])
@@ -243,14 +241,9 @@ def log_in():
         db_session.close()
         if user is not None and user.verify_password(form.get('pwd')):
             session['username'] = form.get('id')
-            return jsonify({
-                'user': form.get('id'),
-                'data': 'succeed'
-            })
+            return jsonify({'user': form.get('id'), 'data': 'succeed'})
         flash('Invalid username or password')
-    return jsonify({
-        'data': 'fail'
-    })
+    return jsonify({'data': 'fail'})
 
 
 @app.route("/signup", methods=['POST'])
@@ -272,14 +265,9 @@ def sign_up():
             db_session.commit()
             db_session.close()
             session['username'] = form.get('id')
-            return jsonify({
-                'user': form.get('id'),
-                'data': 'succeed'
-            })
+            return jsonify({'user': form.get('id'), 'data': 'succeed'})
 
-    return jsonify({
-        'data': 'fail'
-    })
+    return jsonify({'data': 'fail'})
 
 
 @app.route("/stocksearch", methods=['POST'])
@@ -293,55 +281,122 @@ def tradefutureinfo():
 
 
 @app.route("/tradestockinfo", methods=['POST'])
+# @login_required
 def trade_stock_info():
     form = request.form
     user_id = form.get('user_id')
-    s_id = form.get('id')
+    s_id = (form.get('id', '600000'))
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
+    mystock = None
     if user is not None:
-        account = db_session.query(Account).filter_by(associate_id=user_id, account_type='stock').first()
-        mystock = db_session.query(Stock).filter_by(associate_account=account.account_id, code=s_id).first()
-        data = ts.get_realtime_quotes(mystock.code)
-        data = data.to_records()
-        db_session.close()
-        return jsonify({
-            'code': data[0][1],
-            'name': data[0][2],
-            'price': data[0][3],
-            'min': 0,
-            'max': 0,
-            'vol_has': mystock.amount,
-            'bid5': data[0][30],
-            'bid5vol': data[0][29],
-            'bid4': data[0][28],
-            'bid4vol': data[0][27],
-            'bid3': data[0][26],
-            'bid3vol': data[0][25],
-            'bid2': data[0][24],
-            'bid2vol': data[0][23],
-            'bid1': data[0][22],
-            'bid1vol': data[0][21],
-            'buy5': data[0][20],
-            'buy5vol': data[0][19],
-            'buy4': data[0][18],
-            'buy4vol': data[0][17],
-            'buy3': data[0][16],
-            'buy3vol': data[0][15],
-            'buy2': data[0][14],
-            'buy2vol': data[0][13],
-            'buy1': data[0][12],
-            'buy1vol': data[0][11],
-        })
+        account = db_session.query(Account).filter_by(
+            associate_id=user_id, account_type='stock').first()
+        if account is not None:
+            mystock = db_session.query(Stock).filter_by(
+                associate_account=account.account_id, code=s_id).first()
+        else:
+            return jsonify({
+                'code': 'Null',
+                'name': 'Null',
+                'price': '0.00',
+                'min': '0.00',
+                'max': '0.00',
+                'vol_has': '0.00',
+                'bid5': '0.00',
+                'bid5vol': '0.00',
+                'bid4': '0.00',
+                'bid4vol': '0.00',
+                'bid3': '0.00',
+                'bid3vol': '0.00',
+                'bid2': '0.00',
+                'bid2vol': '0.00',
+                'bid1': '0.00',
+                'bid1vol': '0.00',
+                'buy5': '0.00',
+                'buy5vol': '0.00',
+                'buy4': '0.00',
+                'buy4vol': '0.00',
+                'buy3': '0.00',
+                'buy3vol': '0.00',
+                'buy2': '0.00',
+                'buy2vol': '0.00',
+                'buy1': '0.00',
+                'buy1vol': '0.00',
+            })
+        if mystock is not None:
+            data = ts.get_realtime_quotes(mystock.code)
+            data = data.to_records()
+            db_session.close()
+            return jsonify({
+                'code': data[0][1],
+                'name': data[0][2],
+                'price': data[0][3],
+                'min': 0,
+                'max': 0,
+                'vol_has': mystock.amount,
+                'bid5': data[0][30],
+                'bid5vol': data[0][29],
+                'bid4': data[0][28],
+                'bid4vol': data[0][27],
+                'bid3': data[0][26],
+                'bid3vol': data[0][25],
+                'bid2': data[0][24],
+                'bid2vol': data[0][23],
+                'bid1': data[0][22],
+                'bid1vol': data[0][21],
+                'buy5': data[0][20],
+                'buy5vol': data[0][19],
+                'buy4': data[0][18],
+                'buy4vol': data[0][17],
+                'buy3': data[0][16],
+                'buy3vol': data[0][15],
+                'buy2': data[0][14],
+                'buy2vol': data[0][13],
+                'buy1': data[0][12],
+                'buy1vol': data[0][11],
+            })
+
+    data = ts.get_realtime_quotes(s_id[0:6])
+    data = data.to_records()
+    db_session.close()
+    return jsonify({
+        'code': data[0][1],
+        'name': data[0][2],
+        'price': data[0][3],
+        'min': 0,
+        'max': 0,
+        'vol_has': 0,
+        'bid5': data[0][30],
+        'bid5vol': data[0][29],
+        'bid4': data[0][28],
+        'bid4vol': data[0][27],
+        'bid3': data[0][26],
+        'bid3vol': data[0][25],
+        'bid2': data[0][24],
+        'bid2vol': data[0][23],
+        'bid1': data[0][22],
+        'bid1vol': data[0][21],
+        'buy5': data[0][20],
+        'buy5vol': data[0][19],
+        'buy4': data[0][18],
+        'buy4vol': data[0][17],
+        'buy3': data[0][16],
+        'buy3vol': data[0][15],
+        'buy2': data[0][14],
+        'buy2vol': data[0][13],
+        'buy1': data[0][12],
+        'buy1vol': data[0][11],
+    })
 
 
-@app.route("/trade",method=['POST'])
+@app.route("/trade", methods=['POST'])
 def trade():
     form = request.form
     user_id = form.get('user_id')
     trade_id = form.get('id')
-    price = form.get('price')
-    count = form.get('counts')
+    price = Decimal(form.get('price'))
+    trade_count = int(form.get('counts'))
     option = form.get('option')
     trade_type = form.get('type')
     action = form.get('action')
@@ -350,63 +405,67 @@ def trade():
     if user is not None:
         if action == 'buy':
             if trade_type == 'stock':
-                stock_account = db_session.query(Account).filter_by(associate_id=user_id, account_type='stock').first()
-                if (price * count) < stock_account.remain:
-                    data = ts.get_realtime_quotes(trade_id)
-                    data = data[['name','price']]
+                stock_account = db_session.query(Account).filter_by(
+                    associate_id=user_id, account_type='stock').first()
+                if (price * trade_count) < stock_account.remain:
+                    data = ts.get_realtime_quotes(trade_id[0:6])
+                    data = data[['name', 'price']]
                     data = data.to_records()
-                    new_stock = Stock(trade_id, data[0][1], data[0][2], price, data[0][2]*count, count, (data[0][2]-price)*count, stock_account.account_id)
+                    new_stock = Stock(trade_id, data[0][1], Decimal(data[0][2]), price,
+                                      Decimal(data[0][2]) * trade_count, trade_count,
+                                      (Decimal(data[0][2]) - price) * trade_count,
+                                      stock_account.account_id)
                     db_session.add(new_stock)
-                    db_session.query(Account).filter_by(associate_id=user_id, account_type='stock').update({'remain':stock_account.remain - (price * count)})
+                    new_remain = stock_account.remain - (price * trade_count)
+                    db_session.query(Account).filter_by(
+                        associate_id=user_id, account_type='stock').update(
+                            {'remain': new_remain})
                     new_order = MyOrder(
-                        trade_id,
-                        trade_id[0:6],
-                        data[0][1],
-                        'stock',
-                        '买入',
-                        price,
-                        count,
-                        'finished',
-                        data[0][2]*count,
+                        trade_id, trade_id[0:6], data[0][1], 'stock', '买入',
+                        price, trade_count, 'finished', Decimal(data[0][2]) * trade_count,
                         datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                        user_id
-                    )
+                        user_id)
                     db_session.add(new_order)
             elif trade_type == 'future':
                 pass
         elif action == 'bid':
             if trade_type == 'stock':
-                stock_account = db_session.query(Account).filter_by(associate_id=user_id, account_type='stock').first()
-                if (price * count) > 0:
+                stock_account = db_session.query(Account).filter_by(
+                    associate_id=user_id, account_type='stock').first()
+                if (price * trade_count) > 0:
                     data = ts.get_realtime_quotes(trade_id)
                     data = data[['name', 'price']]
                     data = data.to_records()
-                    origin_stock = db_session.query(Stock).filter_by(associate_account=stock_account.account_id, code=trade_id).first()
-                    if origin_stock.amount >= count:
-                        db_session.query(Stock).filter_by(associate_account=stock_account.account_id, code=trade_id).update({
-                            'amount': origin_stock.amount - count
-                        })
-                        db_session.query(Account).filter_by(associate_id=user_id, account_type='stock').update(
-                            {'remain': stock_account.remain + (price * count)})
-                        new_order = MyOrder(
-                            trade_id,
-                            trade_id[0:6],
-                            data[0][1],
-                            'stock',
-                            '卖出',
-                            price,
-                            count,
-                            'finished',
-                            data[0][2] * count,
-                            datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                            user_id
-                        )
+                    origin_stock = db_session.query(Stock).filter_by(
+                        associate_account=stock_account.account_id,
+                        code=trade_id).first()
+                    if origin_stock.amount >= trade_count:
+                        db_session.query(Stock).filter_by(
+                            associate_account=stock_account.account_id,
+                            code=trade_id).update({
+                                'amount': origin_stock.amount - trade_count
+                            })
+                        db_session.query(Account).filter_by(
+                            associate_id=user_id, account_type='stock').update(
+                                {'remain': stock_account.remain + (price * trade_count)})
+                        new_order = MyOrder(trade_id, trade_id[0:6], data[0][1],
+                                            'stock', '卖出', price, trade_count,
+                                            'finished', Decimal(data[0][2]) * trade_count,
+                                            datetime.datetime.now().strftime(
+                                                "%Y-%m-%d %H:%M:%S"), user_id)
                         db_session.add(new_order)
 
             elif trade_type == 'future':
                 pass
         db_session.commit()
         db_session.close()
+        return jsonify({
+            'result': 'succeed'
+        })
+    else:
+        return jsonify({
+            'error': 'Invalid user!'
+        })
 
 
 @app.route("/orders", methods=['POST'])
@@ -420,7 +479,9 @@ def orders():
     user = db_session.query(User).filter_by(username=user_id).first()
     res = []
     if user is not None:
-        order_list = db_session.query(MyOrder).filter(MyOrder.associate_id == user_id, MyOrder.date_time > start_date).all()
+        order_list = db_session.query(MyOrder).filter(
+            MyOrder.associate_id == user_id,
+            MyOrder.date_time > start_date).all()
         res = []
         for order in order_list:
             res.append({
@@ -435,9 +496,7 @@ def orders():
                 'finished': order.finished
             })
     db_session.close()
-    return jsonify({
-        'orders': res
-    })
+    return jsonify({'orders': res})
 
 
 @app.route("/orderundo", methods=['POST'])
@@ -448,19 +507,17 @@ def order_undo():
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
     if user is not None:
-        order = db_session.query(MyOrder).filter(MyOrder.associate_id == user_id, MyOrder.order_id == order_id).first()
+        order = db_session.query(MyOrder).filter(
+            MyOrder.associate_id == user_id,
+            MyOrder.order_id == order_id).first()
         if order.finished != 'finished':
             db_session.delete(order)
             db_session.commit()
             db_session.close()
-            return jsonify({
-                'res': 'succeed'
-            })
+            return jsonify({'res': 'succeed'})
         else:
             db_session.close()
-            return jsonify({
-                'res': 'fail'
-            })
+            return jsonify({'res': 'fail'})
 
 
 @app.route("/quitaccount", methods=['POST'])
@@ -472,7 +529,8 @@ def quit_account():
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
     if user is not None:
-        account = db_session.query(Account).filter_by(account_id=a_id, account_type=a_type).first()
+        account = db_session.query(Account).filter_by(
+            account_id=a_id, account_type=a_type).first()
         db_session.delete(account)
         db_session.commit()
         db_session.close()
@@ -496,10 +554,8 @@ def self_stock():
             initial = ""
             for i in range(len(name)):
                 initial += pinyin.get_initial(name[i])
-            result.append([code+initial, code, name])
-    return jsonify({
-        'selfstock': result
-    })
+            result.append([code + initial, code, name])
+    return jsonify({'selfstock': result})
 
 
 @app.route("/selfstockadd", methods=['POST'])
@@ -515,7 +571,8 @@ def self_stock_add():
             db_session.close()
         else:
             user.stock_list += id
-            db_session.query(User).filter_by(username=user_id).update({'stock_list':user.stock_list})
+            db_session.query(User).filter_by(username=user_id).update(
+                {'stock_list': user.stock_list})
             db_session.close()
     return None
 
@@ -534,7 +591,8 @@ def self_stock_delete():
             for i in range(len(stock_list)):
                 if id != stock_list[i]:
                     new_stock_list += stock_list[i]
-            db_session.query(User).filter_by(username=user_id).update({'stock_list': new_stock_list})
+            db_session.query(User).filter_by(username=user_id).update(
+                {'stock_list': new_stock_list})
             db_session.close()
     return None
 
