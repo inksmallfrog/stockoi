@@ -28,7 +28,6 @@ StockGraph.prototype.drawGraph = function(){
             },
             formatter: function (_param) {
                 var param = _param[0];
-                console.log(_param);
                 return [
                     '日期: ' + param.name + '<hr size=1 style="margin: 3px 0">',
                     '开盘: ' + param.data[0] + '<br/>',

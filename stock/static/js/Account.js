@@ -50,10 +50,9 @@ Account.prototype.loadAccount = function(type){
          * 期待返回内容：对应的账号id
          */
         $.post("../getuseraccount", {user_id: user.id, type: type}, function(data){
-            account_id = data['id']
-               if(account_id != ""){
+            if (typeof data.error == "undefined") {
                     account.has_account[type] = true;
-                   $("#account-" + type + "-id").html(account_id);
+                $("#account-" + type + "-id").html(data.id);
                    $(".has-account-" + type).show();
                    $(".has-no-account-" + type).hide();
                    $("#account-type-" + type).addClass("disable");
@@ -69,7 +68,7 @@ Account.prototype.loadAccount = function(type){
                    }
                }
                account.loadAccountData(type);
-        })
+        }, "json")
     }
 };
 
@@ -179,7 +178,7 @@ Account.prototype.addAccount = function(){
      * 返回：无
      */
     $.post("../addaccount", {
-        user_id: user.id,
+            user_id: user.id,
         type: type,
         brokerage: $("#account-add-brokerage").val(),
         id: $("#account-add-id").val(),
@@ -211,7 +210,7 @@ Account.prototype.quitAccount = function(type){
 
 Account.prototype.show = function(){
     strategies.hide();
-  $(".accounts-panel").removeClass("hide-right");
+    $(".accounts-panel").removeClass("hide-right");
 };
 
 Account.prototype.hide = function(){

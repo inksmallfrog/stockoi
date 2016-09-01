@@ -1,24 +1,27 @@
 # coding:utf-8
 
 # import time
-import pinyin
 import datetime
-import tushare as ts
-import pandas as pd
+from decimal import *
 from functools import wraps
-from flask_login import LoginManager, login_required, login_user
-# from flask import Flask, render_template, redirect, url_for, flash
-# from flask_sqlalchemy import SQLAlchemy
-from model.model_admin import DBSession
+
+import pandas as pd
+import pinyin
+import tushare as ts
+from flask_login import LoginManager
 from flask_socketio import emit, SocketIO
+
+from model.model_admin import DBSession
 from model.models import *
 from stock import *
-from decimal import *
+
 # from conf import OPENTIME
 
 socket_io = SocketIO(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+ts.set_token('43cffb7f9ab231c9af5b990e35cb6ead16deced74a35aee97dbdce10bc88c2c9')
 
 
 def allow_cross_domain(fun):
@@ -46,6 +49,29 @@ def hello():
     return render_template("index.html")
 
 
+@app.route("/stocklist", methods=['POST'])
+def get_stock_list():
+    current_data_columns = ['code', 'name']
+    today_all = ts.get_today_all()
+    today_all = today_all.loc[:, current_data_columns]
+    today_all = today_all.to_records()
+    filter_len = len(today_all)
+    res = []
+    for i in range(0, filter_len):
+        abbr = ''
+        for x in range(len(today_all[i][2])):
+            abbr += pinyin.get_initial(today_all[i][2][x]).upper()
+        res.append({
+            'id': today_all[i][1] + abbr,
+            'code': today_all[i][1],
+            'name': today_all[i][2]
+        })
+    print res
+    return jsonify({
+        'data': res
+    })
+
+
 @app.route("/addaccount", methods=['POST'])
 @allow_cross_domain
 def add_account():
@@ -55,6 +81,7 @@ def add_account():
     brokerage = form.get('brokerage')
     account_id = form.get('id')
     pwd = form.get('pwd')
+    print pwd
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
     if user is not None:
@@ -82,7 +109,6 @@ def get_account_data():
         account = db_session.query(Account).filter_by(
             associate_id=user_id, account_type=a_type).first()
         stock_list = []
-        stock_origin = None
         if account is not None:
             stock_origin = db_session.query(Stock).filter_by(
                 associate_account=account.account_id).all()
@@ -118,6 +144,7 @@ def get_account_data():
 @allow_cross_domain
 def get_stock_data():
     code = (request.form.get('id', '600000'))[0:6]
+    print(code)
     df = ts.get_realtime_quotes(code)
     abbr = ""
     name = (df.loc[:, ['name']]).to_records()[0][1]
@@ -224,11 +251,13 @@ def get_user_account():
         account = db_session.query(Account).filter_by(
             associate_id=user_id, account_type=a_type).first()
         if account is not None:
-            return jsonify({'id': account.account_id})
+            return jsonify({
+                'id': account.account_id
+            })
         else:
             return jsonify({
                 'id': '',
-                'error': 'Account error!'
+                'error': 'undefined'
             })
 
 
@@ -276,24 +305,20 @@ def stock_search():
 
 
 @app.route("/tradefutureinfo", methods=['POST'])
-def tradefutureinfo():
-    pass
-
-
-@app.route("/tradestockinfo", methods=['POST'])
-# @login_required
-def trade_stock_info():
+def trade_future_info():
     form = request.form
     user_id = form.get('user_id')
-    s_id = (form.get('id', '600000'))
+    s_id = (form.get('id', None))
+    begintime = datetime.date.today().strftime("%Y-%m-%D")
+
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
     mystock = None
     if user is not None:
         account = db_session.query(Account).filter_by(
-            associate_id=user_id, account_type='stock').first()
+            associate_id=user_id, account_type='future').first()
         if account is not None:
-            mystock = db_session.query(Stock).filter_by(
+            myfuture = db_session.query(Stock).filter_by(
                 associate_account=account.account_id, code=s_id).first()
         else:
             return jsonify({
@@ -356,6 +381,87 @@ def trade_stock_info():
                 'buy1': data[0][12],
                 'buy1vol': data[0][11],
             })
+
+    data = ts.get_realtime_quotes(s_id[0:6])
+    data = data.to_records()
+    db_session.close()
+    return jsonify({
+        'code': data[0][1],
+        'name': data[0][2],
+        'price': data[0][3],
+        'min': 0,
+        'max': 0,
+        'vol_has': 0,
+        'bid5': data[0][30],
+        'bid5vol': data[0][29],
+        'bid4': data[0][28],
+        'bid4vol': data[0][27],
+        'bid3': data[0][26],
+        'bid3vol': data[0][25],
+        'bid2': data[0][24],
+        'bid2vol': data[0][23],
+        'bid1': data[0][22],
+        'bid1vol': data[0][21],
+        'buy5': data[0][20],
+        'buy5vol': data[0][19],
+        'buy4': data[0][18],
+        'buy4vol': data[0][17],
+        'buy3': data[0][16],
+        'buy3vol': data[0][15],
+        'buy2': data[0][14],
+        'buy2vol': data[0][13],
+        'buy1': data[0][12],
+        'buy1vol': data[0][11],
+    })
+
+
+@app.route("/tradestockinfo", methods=['POST'])
+def trade_stock_info():
+    form = request.form
+    user_id = form.get('user_id')
+    s_id = (form.get('id', '600000'))
+    db_session = DBSession()
+    user = db_session.query(User).filter_by(username=user_id).first()
+    mystock = None
+    if user is not None:
+        account = db_session.query(Account).filter_by(
+            associate_id=user_id, account_type='stock').first()
+        if account is not None:
+            mystock = db_session.query(Stock).filter_by(
+                associate_account=account.account_id, code=s_id).first()
+            if mystock is not None:
+                print mystock.code
+                data = ts.get_realtime_quotes(mystock.code[0:6])
+                data = data.to_records()
+                db_session.close()
+                return jsonify({
+                    'code': data[0][1],
+                    'name': data[0][2],
+                    'price': data[0][3],
+                    'min': 0,
+                    'max': 0,
+                    'vol_has': mystock.amount,
+                    'bid5': data[0][30],
+                    'bid5vol': data[0][29],
+                    'bid4': data[0][28],
+                    'bid4vol': data[0][27],
+                    'bid3': data[0][26],
+                    'bid3vol': data[0][25],
+                    'bid2': data[0][24],
+                    'bid2vol': data[0][23],
+                    'bid1': data[0][22],
+                    'bid1vol': data[0][21],
+                    'buy5': data[0][20],
+                    'buy5vol': data[0][19],
+                    'buy4': data[0][18],
+                    'buy4vol': data[0][17],
+                    'buy3': data[0][16],
+                    'buy3vol': data[0][15],
+                    'buy2': data[0][14],
+                    'buy2vol': data[0][13],
+                    'buy1': data[0][12],
+                    'buy1vol': data[0][11],
+                })
 
     data = ts.get_realtime_quotes(s_id[0:6])
     data = data.to_records()
@@ -489,7 +595,7 @@ def orders():
                 'id': order.id,
                 'code': order.code,
                 'name': order.name,
-                'type': order.o_type,
+                'type': order.order_type,
                 'status': order.status,
                 'count': order.count,
                 'price': str(order.price),

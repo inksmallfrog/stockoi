@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8de96b0b-0bd4-468b-af7e-f02f84ff699f" name="Default" comment="">
+    <list default="true" id="8de96b0b-0bd4-468b-af7e-f02f84ff699f" name="Default" comment="fixed bugs">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/StockList.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/__init__.py" afterPath="$PROJECT_DIR$/stock/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py" afterPath="$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/algorithm/select_money_flow.py" afterPath="$PROJECT_DIR$/stock/algorithm/select_money_flow.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/algorithm/tool.py" afterPath="$PROJECT_DIR$/stock/algorithm/tool.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/conf.py" afterPath="$PROJECT_DIR$/stock/conf.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/index.py" afterPath="$PROJECT_DIR$/stock/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/model/model_admin.py" afterPath="$PROJECT_DIR$/stock/model/model_admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/model/models.py" afterPath="$PROJECT_DIR$/stock/model/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/css/trade.css" afterPath="$PROJECT_DIR$/stock/static/css/trade.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/Account.js" afterPath="$PROJECT_DIR$/stock/static/js/Account.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/OrderDetail.js" afterPath="$PROJECT_DIR$/stock/static/js/OrderDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/SelfStock.js" afterPath="$PROJECT_DIR$/stock/static/js/SelfStock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/Stock.js" afterPath="$PROJECT_DIR$/stock/static/js/Stock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/StockDetail.js" afterPath="$PROJECT_DIR$/stock/static/js/StockDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/StockGraph.js" afterPath="$PROJECT_DIR$/stock/static/js/StockGraph.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/Trade.js" afterPath="$PROJECT_DIR$/stock/static/js/Trade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/User.js" afterPath="$PROJECT_DIR$/stock/static/js/User.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/config.js" afterPath="$PROJECT_DIR$/stock/static/js/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/global.js" afterPath="$PROJECT_DIR$/stock/static/js/global.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/templates/index.html" afterPath="$PROJECT_DIR$/stock/templates/index.html" />
     </list>
     <ignored path="stock.iws" />
@@ -26,9 +29,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/stock$run.coverage" NAME="run Coverage Results" MODIFIED="1472270004981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stock$run.coverage" NAME="run Coverage Results" MODIFIED="1472716883719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stock$tool.coverage" NAME="tool Coverage Results" MODIFIED="1471411008427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/algorithm" />
-    <SUITE FILE_PATH="coverage/stock$index.coverage" NAME="index Coverage Results" MODIFIED="1472265956983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock" />
+    <SUITE FILE_PATH="coverage/stock$index.coverage" NAME="index Coverage Results" MODIFIED="1472709782856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock" />
     <SUITE FILE_PATH="coverage/stock$config.coverage" NAME="config Coverage Results" MODIFIED="1471158363361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/strategies" />
     <SUITE FILE_PATH="coverage/stock$getdata.coverage" NAME="getdata Coverage Results" MODIFIED="1471177796597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/strategies" />
     <SUITE FILE_PATH="coverage/stock$money_flow.coverage" NAME="money_flow Coverage Results" MODIFIED="1471435126889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stock/algorithm" />
@@ -43,43 +46,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stock/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+            <state relative-caret-position="-519">
+              <caret line="431" column="34" selection-start-line="431" selection-start-column="34" selection-end-line="431" selection-end-column="34" />
               <folding>
-                <element signature="e#30#43#0" expanded="true" />
-                <element signature="e#17093#18048#0" expanded="false" />
-                <element signature="e#18116#18751#0" expanded="false" />
-                <element signature="e#18823#19275#0" expanded="false" />
-                <element signature="e#19343#19985#0" expanded="false" />
-                <element signature="e#20060#20584#0" expanded="false" />
-                <element signature="e#20665#21278#0" expanded="false" />
-                <element signature="e#21344#21808#0" expanded="false" />
-                <element signature="e#21867#22355#0" expanded="false" />
+                <element signature="e#20500#21459#0" expanded="false" />
+                <element signature="e#21527#22162#0" expanded="false" />
+                <element signature="e#22234#22686#0" expanded="false" />
+                <element signature="e#22754#23396#0" expanded="false" />
+                <element signature="e#23471#23995#0" expanded="false" />
+                <element signature="e#24076#24689#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock/conf.py">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="275">
+              <caret line="371" column="92" selection-start-line="371" selection-start-column="92" selection-end-line="371" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Account.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/Account.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="186" column="38" selection-start-line="186" selection-start-column="38" selection-end-line="186" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -88,66 +86,74 @@
       <file leaf-file-name="Trade.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stock/static/js/Trade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5405">
-              <caret line="309" column="142" selection-start-line="309" selection-start-column="108" selection-end-line="309" selection-end-column="144" />
+            <state relative-caret-position="122">
+              <caret line="310" column="16" selection-start-line="310" selection-start-column="16" selection-end-line="310" selection-end-column="24" />
               <folding>
-                <element signature="e#205#2939#0" expanded="false" />
+                <marker date="1472717526189" expanded="true" signature="11454:11776" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock/static/js/Account.js">
+      <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/User.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1909">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state relative-caret-position="-629">
+              <caret line="82" column="10" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7544">
-              <caret line="328" column="65" selection-start-line="328" selection-start-column="65" selection-end-line="328" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock/model/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="47" column="31" selection-start-line="5" selection-start-column="0" selection-end-line="47" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#62#0" expanded="true" />
-                <element signature="e#2233#3226#0" expanded="false" />
-                <element signature="e#3258#4594#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model_admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock/model/model_admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock/__init__.py">
+      <file leaf-file-name="StockDetail.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/StockDetail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="29" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stock.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/Stock.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="132" column="38" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDetail.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/OrderDetail.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="98" column="73" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
+              <folding>
+                <marker date="1472717526137" expanded="true" signature="1182:2194" ph="{...}" />
+                <marker date="1472717526137" expanded="true" signature="2060:2182" ph="{...}" />
+                <marker date="1472717526137" expanded="true" signature="2527:3676" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/StockList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelfStock.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stock/static/js/SelfStock.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -165,13 +171,16 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ammirkhan" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controller/init.py" />
-        <option value="$PROJECT_DIR$/init.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/model/model_admin.py" />
@@ -200,27 +209,29 @@
         <option value="$PROJECT_DIR$/stock/readme.txt" />
         <option value="$PROJECT_DIR$/stock/algorithm/tool.py" />
         <option value="$PROJECT_DIR$/stock/static/js/StockGraph.js" />
-        <option value="$PROJECT_DIR$/stock/static/js/Stock.js" />
         <option value="$PROJECT_DIR$/stock/model/LoginForm.py" />
         <option value="$PROJECT_DIR$/stock/static/js/JquerySession.js" />
         <option value="$PROJECT_DIR$/stock/static/js/thirdParty/JQuerySession.js" />
-        <option value="$PROJECT_DIR$/stock/static/js/SelfStock.js" />
         <option value="$PROJECT_DIR$/stock/static/js/User.js" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/stock/model/User.py" />
         <option value="$PROJECT_DIR$/stock/model/Account.py" />
-        <option value="$PROJECT_DIR$/stock/static/js/Account.js" />
         <option value="$PROJECT_DIR$/stock/model/Order.py" />
-        <option value="$PROJECT_DIR$/stock/static/js/OrderDetail.js" />
         <option value="$PROJECT_DIR$/stock/model/Stock.py" />
         <option value="$PROJECT_DIR$/stock/model/MyOrder.py" />
         <option value="$PROJECT_DIR$/stock/model/models.py" />
         <option value="$PROJECT_DIR$/stock/__init__.py" />
-        <option value="$PROJECT_DIR$/stock/static/js/Trade.js" />
-        <option value="$PROJECT_DIR$/stock/templates/index.html" />
         <option value="$PROJECT_DIR$/stock/model/model_admin.py" />
-        <option value="$PROJECT_DIR$/stock/index.py" />
         <option value="$PROJECT_DIR$/stock/conf.py" />
+        <option value="$PROJECT_DIR$/stock/static/js/SelfStock.js" />
+        <option value="$PROJECT_DIR$/stock/static/css/trade.css" />
+        <option value="$PROJECT_DIR$/stock/static/js/Stock.js" />
+        <option value="$PROJECT_DIR$/stock/static/js/OrderDetail.js" />
+        <option value="$PROJECT_DIR$/stock/static/js/StockList.js" />
+        <option value="$PROJECT_DIR$/stock/templates/index.html" />
+        <option value="$PROJECT_DIR$/stock/static/js/Trade.js" />
+        <option value="$PROJECT_DIR$/stock/index.py" />
+        <option value="$PROJECT_DIR$/stock/static/js/Account.js" />
       </list>
     </option>
   </component>
@@ -232,9 +243,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="54" />
-    <option name="width" value="1835" />
-    <option name="height" value="1026" />
+    <option name="y" value="24" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -280,7 +291,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,29 +341,88 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stockoi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stockoi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stockoi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../future/future-honor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ToolWindowFind.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stock/algorithm" />
+      <recent name="$PROJECT_DIR$/stock" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/stock" />
       <recent name="$PROJECT_DIR$/stock/templates" />
       <recent name="$PROJECT_DIR$/stock/static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/stock/algorithm" />
-      <recent name="$PROJECT_DIR$/stock" />
     </key>
   </component>
   <component name="RunManager" selected="Python.run">
@@ -722,28 +791,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="54" width="1835" height="1026" extended-state="0" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2174399" sideWeight="0.49386504" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18905473" sideWeight="0.49386504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5085683" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32254696" sideWeight="0.7429519" order="2" side_tool="false" content_ui="tabs" x="12" y="551" width="1895" height="40" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960423" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2824765" sideWeight="0.506135" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39770356" sideWeight="0.6522941" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5862069" sideWeight="0.7429519" order="2" side_tool="false" content_ui="tabs" x="12" y="551" width="1895" height="40" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.49143174" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39770356" sideWeight="0.6522941" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -778,6 +847,14 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -785,6 +862,12 @@
           <url>file://$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py</url>
           <line>24</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/stock/static/js/User.js</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -794,31 +877,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#72#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/test/data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2643">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/orders" />
-    <entry file="file://$PROJECT_DIR$/stock/getaccountdata" />
-    <entry file="file://$PROJECT_DIR$/stock/readme.txt" />
     <entry file="file:///usr/local/lib/python2.7/dist-packages/flask/json.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -840,13 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/algorithm/select_money_flow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/exthook.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1541">
@@ -854,21 +910,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock/static/js/position_bar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/main_container.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -897,13 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/k.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock/static/js/thirdParty/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1943">
@@ -919,20 +954,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stock/model/LoginForm.py" />
-    <entry file="file://$PROJECT_DIR$/stock/static/js/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-858">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1242">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock/static/js/header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -947,31 +968,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock/static/js/login_register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="46" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1388">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -982,75 +982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/SelfStock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/OrderDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="118" column="15" selection-start-line="118" selection-start-column="15" selection-end-line="118" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/Stock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3036">
-          <caret line="132" column="2" selection-start-line="132" selection-start-column="2" selection-end-line="132" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/StockDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/StockGraph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/Strategies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/strategy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock/model/User.py" />
     <entry file="file://$PROJECT_DIR$/stock/model/Stock.py" />
     <entry file="file://$PROJECT_DIR$/stock/model/Account.py" />
     <entry file="file://$PROJECT_DIR$/stock/model/MyOrder.py" />
-    <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7544">
-          <caret line="328" column="65" selection-start-line="328" selection-start-column="65" selection-end-line="328" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/Account.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1909">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/json/encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1060,21 +995,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stock/model/model_admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
+        <state relative-caret-position="138">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock/static/js/Trade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5405">
-          <caret line="309" column="142" selection-start-line="309" selection-start-column="108" selection-end-line="309" selection-end-column="144" />
-          <folding>
-            <element signature="e#205#2939#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,13 +1011,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/main_container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/k.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stock/model/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
+        <state relative-caret-position="587">
           <caret line="47" column="31" selection-start-line="5" selection-start-column="0" selection-end-line="47" selection-end-column="31" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
@@ -1106,31 +1058,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock/index.py">
+    <entry file="file://$PROJECT_DIR$/stock/tk.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
-          <folding>
-            <element signature="e#30#43#0" expanded="true" />
-            <element signature="e#17093#18048#0" expanded="false" />
-            <element signature="e#18116#18751#0" expanded="false" />
-            <element signature="e#18823#19275#0" expanded="false" />
-            <element signature="e#19343#19985#0" expanded="false" />
-            <element signature="e#20060#20584#0" expanded="false" />
-            <element signature="e#20665#21278#0" expanded="false" />
-            <element signature="e#21344#21808#0" expanded="false" />
-            <element signature="e#21867#22355#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="115">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/getstockgraphdata">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/algorithm/money_flow_backtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#72#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/algorithm/select_money_flow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="62" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1449">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-682">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/Strategies.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/strategy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/css/trade.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/StockGraph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <marker date="1472708349000" expanded="true" signature="697:710" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/StockDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/Stock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="132" column="38" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/SelfStock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="119" column="8" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="82" column="10" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/OrderDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="98" column="73" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
+          <folding>
+            <marker date="1472717526137" expanded="true" signature="1182:2194" ph="{...}" />
+            <marker date="1472717526137" expanded="true" signature="2060:2182" ph="{...}" />
+            <marker date="1472717526137" expanded="true" signature="2527:3676" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/StockList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="371" column="92" selection-start-line="371" selection-start-column="92" selection-end-line="371" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="431" column="34" selection-start-line="431" selection-start-column="34" selection-end-line="431" selection-end-column="34" />
+          <folding>
+            <element signature="e#20500#21459#0" expanded="false" />
+            <element signature="e#21527#22162#0" expanded="false" />
+            <element signature="e#22234#22686#0" expanded="false" />
+            <element signature="e#22754#23396#0" expanded="false" />
+            <element signature="e#23471#23995#0" expanded="false" />
+            <element signature="e#24076#24689#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/Trade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="310" column="16" selection-start-line="310" selection-start-column="16" selection-end-line="310" selection-end-column="24" />
+          <folding>
+            <marker date="1472717526189" expanded="true" signature="11454:11776" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock/static/js/Account.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="186" column="38" selection-start-line="186" selection-start-column="38" selection-end-line="186" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -114,7 +114,7 @@ StockDetail.prototype.bindData = function(){
     }
     $(".detail-price").html(Number(stock.price).toFixed(2) + price_img.replace(/\{price_status}/g, status));
     $(".updown").html(Number(stock.price - stock.close).toFixed(2));
-    $(".scale").html(Number((stock.price - stock.close) / stock.close).toFixed(2) + "%");
+    $(".scale").html(Number((stock.price - stock.close) * 100.0 / (stock.close * 1.0)).toFixed(2) + "%");
     $("#open").html(Number(stock.open).toFixed(2));
     $("#high").html(Number(stock.high).toFixed(2));
     $("#max").html(Number(stock.max).toFixed(2));
@@ -137,7 +137,8 @@ StockDetail.prototype.bindData = function(){
 };
 
 //更新股票图表
-StockDetail.prototype.updateGraph = function(){
+StockDetail.prototype.updateGraph = function (start_time) {
+    stock.updateGraphData(start_time);
     stock_detail.stock_graph.drawGraph();
 };
 

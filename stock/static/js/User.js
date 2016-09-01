@@ -10,13 +10,11 @@ function User(){
 
 //初始化登录情况
 User.prototype.init = function(){
-    this.id = $.session.get("user_id");
+    this.id = $.cookie("user_id");
     if(typeof this.id != 'undefined'){
         this.logged = true;
     }
     this.toLogin();
-    $("#pwd_input").val('');
-    $("#signup_pwd_input").val('');
 
     $("#show-pwd-button").click(function(){
         $("#signup_pwd_input").attr("type", $(this).attr("data"));
@@ -37,7 +35,7 @@ User.prototype.toLogin = function(){
     var login_button = $("#login-button");
     login_button.unbind("click");
     login_button.click(function(){
-        login();
+        user.login();
     });
     var signup_button = $("#signup-button");
     signup_button.unbind("click");
@@ -57,15 +55,15 @@ User.prototype.toSignup = function(){
     var signup_button = $("#signup-button");
     signup_button.unbind("click");
     signup_button.click(function(){
-        login();
+        user.signup();
     });
 };
 
-/*//用户登录
+//用户登录
 User.prototype.login = function(){
     var user = this;
     var id = $("#user_id_input").val();
-    /!*
+    /*
      * 发送登录信息
      * 发送目标：{root}/login
      * 发送方式：post
@@ -75,16 +73,11 @@ User.prototype.login = function(){
      * 期待返回内容："succeed" => 登录成功
      *             ："user_id_error" => 用户名错误
      *             ："pwd_error" => 密码错误
-     *!/
-    console.log("aaa");
+     */
     $.post("../login", {id: id, pwd: $("#pwd_input").val()},
         function (data, status) {
-            console.log(data);
-            console.log(data['data'] == 'succeed');
-            if(data['data'] == 'succeed'){
-                console.log(data['data']);
-                $.cookie("user_id", id, {expires: 8000});
-                console.log(id);
+            if (data.data == 'succeed') {
+                $.cookie("user_id", id, {expires: 14});
                 user.id = id;
                 window.location.reload();
             }
@@ -93,12 +86,12 @@ User.prototype.login = function(){
             }
         });
     return false;
-};*/
+};
 
-/*User.prototype.signup = function(){
+User.prototype.signup = function () {
     var user = this;
     var id = $("#signup_user_id_input").val();
-    /!*
+    /*
      * 发送注册信息
      * 发送目标：{root}/signup
      * 发送方式：post
@@ -108,20 +101,20 @@ User.prototype.login = function(){
      * 期待返回内容："succeed" => 注册成功
      *             ："signup_user_id_error" => 用户名已存在
      *             ："signup_pwd_error" => ？
-     *!/
-    $.post("../signup", {id: id, pwd: $("#singup_pwd_input").val()},
-        function (data, status) {
-            if(data == 'succeed'){
-                $.cookie("user_id", id, {expires: 80});
+     */
+    $.post("../signup", {id: id, pwd: $("#signup_pwd_input").val()},
+        function (data) {
+            if (data.data == 'succeed') {
+                $.cookie("user_id", id, {expires: 14});
                 user.id = id;
-                // window.location.reload();
+                window.location.reload();
             }
-            else{
-                $("#" + data).slideDown();
+            else if (data.error == "Invalid username!") {
+                $("#signup_user_id_error").slideDown();
             }
-        });
+        }, "json");
     return false;
-};*/
+};
 
 //用户登出
 User.prototype.quit = function(){
@@ -133,42 +126,6 @@ User.prototype.quit = function(){
      * 返回：无
      */
     $.post("../logout", {user_id: user.id});
-    $.session.remove("user_id");
+    $.cookie("user_id", '', {expires: -1});
     window.location.reload();
 };
-
-//用户登陆或注册
-function login(){
-    var login_id = $("#user_id_input").val();
-    var signup_id = $("#signup_user_id_input").val();
-    if(login_id != '' && $("#pwd_input").val() != ''){
-        $.post("../login", {id: login_id, pwd: $("#pwd_input").val()},
-        function (data, status) {
-            if(data['data'] == 'succeed'){
-                user.id = login_id;
-                $.session.set("user_id", data['user']);
-                window.location.reload();
-            }
-            else{
-                $("#" + data).slideDown();
-            }
-        });
-        return false;
-    }else{
-        console.log($("#signup_pwd_input").val());
-        $.post("../signup", {id: signup_id, pwd: $("#signup_pwd_input").val()},
-        function (data, status) {
-            console.log(data['data']);
-            if(data['data'] == 'succeed'){
-                user.id = signup_id;
-                $.session.set("user_id", data['user']);
-                window.location.reload();
-            }
-            else{
-                $("#" + data).slideDown();
-            }
-        });
-    return false;
-    }
-
-}

@@ -20,7 +20,6 @@ SelfStock.prototype.init = function(){
 //读取用户自选股列表
 SelfStock.prototype.loadList = function(){
     var selfstock = this;
-    console.log(user.id);
     /*
      * 发送自选股列表请求
      * 发送目标：{root}/selfstock
@@ -42,7 +41,7 @@ SelfStock.prototype.bindData = function(){
     //建立自选股列表
     var content = '';
     for (var i = 0; i < this.stock_list.length; ++i) {
-        content += selfstock_eachstock.replace(/\{id}/g, this.stock_list[i][0]).replace(/\{code}/g, this.stock_list[i][1]).replace(/\{name}/g, this.stock_list[i][2]);
+        content += selfstock_eachstock.replace(/\{id}/g, this.stock_list[i].id).replace(/\{code}/g, this.stock_list[i].code).replace(/\{name}/g, this.stock_list[i].name);
     }
     content += selfstock_addstock;
 
@@ -117,18 +116,11 @@ SelfStock.prototype.addStock = function(id, code, name){
      *           id => 股票id
      * 返回：无
      */
-    $.post("../selfstockadd", {user_id: account.id, id: id});
-
-    this.stock_list.push({id:id, code:code, name:name});
-    var content = selfstock_eachstock.replace(/\{id}/g, id).replace(/\{code}/g, code).replace(/\{name}/g, name);
-    var selfstock = this;
-    $(".selfstock-last-item").before(content);
-    $(".selfstock-item-detail").click(function(){
-        stock_detail.changeStock($(this).attr("data"));
+    $.post("../selfstockadd", {user_id: user.id, id: id}, function (data) {
+        //alert(data);
     });
-    $(".delete-icon").click(function(){
-        selfstock.deleteStock($(this).data);
-    });
+    this.stock_list.push({id: id, code: code, name: name});
+    this.bindData();
 };
 
 //删除自选股
@@ -141,7 +133,7 @@ SelfStock.prototype.deleteStock = function(id, node){
      *           id => 股票id
      * 返回：无
      */
-    $.post("../selfstockdelete", {user_id: account.id, id: id});
+    $.post("../selfstockdelete", {user_id: user.id, id: id});
 
     for(var i = 0; i < this.stock_list.length; ++i){
         if(this.stock_list[i].id == id){

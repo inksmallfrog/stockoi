@@ -74,18 +74,23 @@ Stock.prototype.updateDetail = function(){
 
 //从json数据中绑定数据
 Stock.prototype.readDetail = function(data){
-    this.id = data.id;
     this.code = data.code;
     this.name = data.name;
     this.abbr = data.abbr;
 
-    this.price = data.price;
-    this.open = data.open;
-    this.close = data.close;
-    this.high = data.high;
-    this.low = data.low;
-    this.max = data.max;
-    this.min = data.min;
+    this.price = Number(data.price);
+    this.open = Number(data.open);
+    this.close = Number(data.close);
+    this.high = Number(data.high);
+    this.low = Number(data.low);
+    if (this.price == 0) {
+        this.price = this.close;
+        this.open = this.close;
+        this.high = this.close;
+        this.low = this.close;
+    }
+    this.max = (Math.round(Number(data.close) * 1.1 * 100) / 100.0).toFixed(2);
+    this.min = (Math.round(Number(data.close) * 0.9 * 100) / 100.0).toFixed(2);
     this.vol = data.vol;
     this.value = data.value;
     this.marketvalue = data.marketvalue;
@@ -125,9 +130,7 @@ Stock.prototype.updateGraphData = function(start_time){
      */
     var stock = this;
     $.post("../getstockgraphdata", {id: this.id, type: stock_detail.graph_type, start_time: start_time}, function(data){
-        var mydata = (data['data']).concat();
-        console.log(mydata);
-        stock.readGraphData(mydata);
+        stock.readGraphData(data['data']);
         stock_detail.updateGraph();
     });
 };
@@ -135,10 +138,10 @@ Stock.prototype.updateGraphData = function(start_time){
 //从数组中获取图表数据
 Stock.prototype.readGraphData = function(raw_data){
     var data;
-    data = raw_data.concat()
+    data = raw_data;
+
     var categoryData = [];
     var values = [];
-    console.log(data);
     for (var i = 0; i < data.length; i++) {
         categoryData.push(data[i].splice(0, 1)[0]);//切除时间
         values.push(data[i]); //剩余属性
