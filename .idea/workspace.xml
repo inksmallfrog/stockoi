@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8de96b0b-0bd4-468b-af7e-f02f84ff699f" name="Default" comment="fixed bugs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stock/static/js/StockList.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/index.py" afterPath="$PROJECT_DIR$/stock/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/css/trade.css" afterPath="$PROJECT_DIR$/stock/static/css/trade.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/Account.js" afterPath="$PROJECT_DIR$/stock/static/js/Account.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/OrderDetail.js" afterPath="$PROJECT_DIR$/stock/static/js/OrderDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/SelfStock.js" afterPath="$PROJECT_DIR$/stock/static/js/SelfStock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/Stock.js" afterPath="$PROJECT_DIR$/stock/static/js/Stock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/StockDetail.js" afterPath="$PROJECT_DIR$/stock/static/js/StockDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/StockGraph.js" afterPath="$PROJECT_DIR$/stock/static/js/StockGraph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/Trade.js" afterPath="$PROJECT_DIR$/stock/static/js/Trade.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/User.js" afterPath="$PROJECT_DIR$/stock/static/js/User.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/config.js" afterPath="$PROJECT_DIR$/stock/static/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/static/js/global.js" afterPath="$PROJECT_DIR$/stock/static/js/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock/templates/index.html" afterPath="$PROJECT_DIR$/stock/templates/index.html" />
     </list>
     <ignored path="stock.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -776,6 +762,14 @@
       <workItem from="1469082897260" duration="48000" />
       <workItem from="1469149056247" duration="10000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed bugs">
+      <created>1472717561242</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1472717561242</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
