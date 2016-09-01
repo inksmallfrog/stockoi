@@ -69,7 +69,7 @@ Date.prototype.format =function(format)
         "s+" : this.getSeconds(), //second
         "q+" : Math.floor((this.getMonth()+3)/3), //quarter
         "S" : this.getMilliseconds() //millisecond
-    };
+    }
     if(/(y+)/.test(format)) format=format.replace(RegExp.$1,
         (this.getFullYear()+"").substr(4- RegExp.$1.length));
     for(var k in o)if(new RegExp("("+ k +")").test(format))
@@ -82,10 +82,10 @@ Date.prototype.format =function(format)
 //设置颜色
 setTextColor = function(node, price, close){
     var is_up = 0;
-    if (Number(price) > Number(close)) {
+    if(Number(price) > Number(close)){
         is_up = 1;
     }
-    else if (Number(price) < Number(close)) {
+    else if(Number(price) < Number(close)){
         is_up = -1;
     }
     node.removeClass("price-up");

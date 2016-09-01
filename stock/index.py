@@ -11,8 +11,8 @@ import tushare as ts
 from flask_login import LoginManager
 from flask_socketio import emit, SocketIO
 
-from model.model_admin import DBSession
-from model.models import *
+from stock.model.model_admin import DBSession
+from stock.model.models import *
 from stock import *
 
 # from conf import OPENTIME
@@ -66,7 +66,7 @@ def get_stock_list():
             'code': today_all[i][1],
             'name': today_all[i][2]
         })
-    print res
+
     return jsonify({
         'data': res
     })
@@ -81,7 +81,7 @@ def add_account():
     brokerage = form.get('brokerage')
     account_id = form.get('id')
     pwd = form.get('pwd')
-    print pwd
+
     db_session = DBSession()
     user = db_session.query(User).filter_by(username=user_id).first()
     if user is not None:
@@ -430,7 +430,7 @@ def trade_stock_info():
             mystock = db_session.query(Stock).filter_by(
                 associate_account=account.account_id, code=s_id).first()
             if mystock is not None:
-                print mystock.code
+
                 data = ts.get_realtime_quotes(mystock.code[0:6])
                 data = data.to_records()
                 db_session.close()

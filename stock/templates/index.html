@@ -1,421 +1,358 @@
-﻿<html lang="en" class="app">
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
 <head>
-    <meta charset="utf-8"/>
-    <title>EasyQiankun</title>
-    <meta name="description"
-          content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="../static/css/app.v2.css" type="text/css"/>
-    <link rel="stylesheet" href="../static/css/combo.select.css" type="text/css">
+<meta charset="utf-8" />
+<title>EasyQiankun</title>
+<meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../static/css/app.v2.css" type="text/css" />
+<link rel="stylesheet" href="../static/css/combo.select.css" type="text/css">
 
-    <link rel="stylesheet" href="../static/css/fonts.css" type="text/css"/>
-    <link rel="stylesheet" href="../static/css/global.css" type="text/css"/>
-    <link rel="stylesheet" href="../static/css/header.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/top_picture.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/dialog.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/stock.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/selfstock.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/detailstock.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/trade.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/orderdetail.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/account.css" type="text/css" cache="false"/>
-    <link rel="stylesheet" href="../static/css/strategies.css" type="text/css" cache="false"/>
+<link rel="stylesheet" href="../static/css/fonts.css" type="text/css" />
+<link rel="stylesheet" href="../static/css/global.css" type="text/css" />
+<link rel="stylesheet" href="../static/css/header.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/top_picture.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/dialog.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/stock.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/selfstock.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/detailstock.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/trade.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/orderdetail.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/account.css" type="text/css" cache="false" />
+<link rel="stylesheet" href="../static/css/strategies.css" type="text/css" cache="false" />
 </head>
 
 <body>
 <section class="vbox">
-    <!--导航栏-->
-    <div class="header-container">
-        <div class="header-background navbar-fixed-top"></div>
-        <header class="header navbar-fixed-top">
-            <!--商标-->
-            <a href="./index.html" class="navbar-brand hide-tiny">Alpha</a>
-            <!--END商标-->
+  <!--导航栏-->
+  <div class="header-container">
+    <div class="header-background navbar-fixed-top"></div>
+    <header class="header navbar-fixed-top">
+      <!--商标-->
+      <a href="./index.html" class="navbar-brand hide-tiny">Alpha</a>
+      <!--END商标-->
 
-            <!--时间条-->
-            <div class="time-show navbar-brand">
-                <div class="date">1900/01/01</div>
-                <div class="time">00:00</div>
-            </div>
-            <!--END时间条-->
+      <!--时间条-->
+      <div class="time-show navbar-brand">
+          <div class="date">1900/01/01</div>
+          <div class="time">00:00</div>
+      </div>
+      <!--END时间条-->
 
-            <!--登录头像-->
-            <div class="user-status-box">
-                <a href="#" class="user-status"><img src="../static/assets/icons/unlogged.png" class="user-avator"></a>
-                <ul class="dropdown-menu user-option-menu" role="menu">
-                    <div class="up-triangle"></div>
-                    <li><a href="#" id="market-panel-button">查看行情</a></li>
-                    <li><a href="#" id="account-panel-button">账户管理</a></li>
-                    <li><a href="#" id="strategies-panel-button">策略选股</a></li>
-                    <li><a href="#" id="logout-button">登出</a></li>
-                </ul>
-            </div>
-            <!--END登录头像-->
-        </header>
-        <div class="header-underline navbar-fixed-top"></div>
-    </div>
-    <!--End 导航栏-->
+      <!--登录头像-->
+      <div class="user-status-box">
+          <a href="#" class="user-status"><img src="../static/assets/icons/unlogged.png" class="user-avator"></a>
+          <ul class="dropdown-menu user-option-menu" role="menu">
+              <div class="up-triangle"></div>
+              <li><a href="#" id="market-panel-button">查看行情</a></li>
+              <li><a href="#" id="account-panel-button">账户管理</a></li>
+              <li><a href="#" id="strategies-panel-button">策略选股</a></li>
+              <li><a href="#" id="logout-button">登出</a></li>
+          </ul>
+      </div>
+      <!--END登录头像-->
+    </header>
+    <div class="header-underline navbar-fixed-top"></div>
+  </div>
+  <!--End 导航栏-->
 
-    <!--页面区域-->
-    <section class="scrollable slimScrollBar">
-        <!--顶部图片-->
-        <section class="top-section">
-            <div class="top-picture">
-                <img id="k-line" src="../static/assets/img/top_kline.png" class="hidden-xs">
-                <img id="img" src="../static/assets/img/top_img.png">
-            </div>
-        </section>
-        <!--End 顶部图片-->
-
-        <!--股票信息栏-->
-        <div class="stock">
-            <!--自选股模块-->
-            <div class="selfstock-panel">
-                <div class="selfstcok-container">
-                    <div class="selfstock-box">
-                        <div class="panel-title">我的自选股</div>
-                        <ul class="selfstock-list scrollable slimScrollBar">
-
-                        </ul>
-
-                </div>
-                </div>
-            </div>
-            <!--END自选股模块-->
-
-            <!--股票信息模块-->
-            <div class="stockdetail-panel">
-                <!--搜索-->
-                <div class="search-box">
-                    <a href="#" data-toggle="dropdown" class="search-box-tip">代码
-                        <div class="triangle-right-bottom"></div>
-                    </a>
-                    <ul class="dropdown-menu search-box-tip-dropdown">
-                        <div class="up-triangle"></div>
-                        <li><a href="#" class="search-box-tip-change" data="code">代码</a></li>
-                        <li><a href="#" class="search-box-tip-change" data="time">时间</a></li>
-                    </ul>
-                    <div class="stocklist-select-box">
-                        <select class="stocklist-select">
-                            <option value="" disabled selected>请输入股票名称或代码</option>
-                        </select>
-                    </div>
-                    <div class="stocklist-time-box">
-                        <input id="time-search-y" placeholder=""><span class="spliter">-</span>
-                        <input id="time-search-M" placeholder=""><span class="spliter">-</span>
-                        <input id="time-search-d" placeholder="">
-                    </div>
-                    <button class="search-stock">搜索</button>
-                </div>
-                <!--END搜索-->
-
-                <!--信息盒-->
-                <div class="stockdetail-box">
-                    <div class="detail-left">
-                        <div class="detail-name">浦发银行(600000)</div>
-                        <div class="detail-price price-up">15.83<img id="price-arrow"
-                                                                     src="../static/assets/icons/price_up.png"></div>
-                        <div class="detail-updown price-up"><span class="updown">+0.04</span><span
-                                class="scale">+0.25%</span></div>
-                    </div>
-                    <div class="detail-right">
-                        <div class="detail-layer">
-                            <div class="detail-box">
-                                <div class="detail-title">今开</div>
-                                <div class="detail-value price-up" id="open">15.80</div>
-                            </div>
-                            <div class="detail-box">
-                                <div class="detail-title">最高</div>
-                                <div class="detail-value price-up" id="high">15.84</div>
-                            </div>
-                            <div class="detail-box">
-                                <div class="detail-title">涨停</div>
-                                <div class="detail-value price-up" id="max">17.37</div>
-                            </div>
-                            <div class="detail-box hidden-xs">
-                                <div class="detail-title">总量</div>
-                                <div class="detail-value" id="vol">8.44<span class="unit" id="vol-unit">万手</span></div>
-                            </div>
-                            <div class="detail-box hidden-xs">
-                                <div class="detail-title">市值</div>
-                                <div class="detail-value" id="marketvalue">3422.17<span class="unit"
-                                                                                        id="marketvalue-unit">亿</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="detail-layer">
-                            <div class="detail-box">
-                                <div class="detail-title">昨收</div>
-                                <div class="detail-value" id="close">15.79</div>
-                            </div>
-                            <div class="detail-box">
-                                <div class="detail-title">最低</div>
-                                <div class="detail-value price-down" id="low">15.73</div>
-                            </div>
-                            <div class="detail-box">
-                                <div class="detail-title">跌停</div>
-                                <div class="detail-value price-down" id="min">14.21</div>
-                            </div>
-                            <div class="detail-box hidden-md">
-                                <div class="detail-title">总额</div>
-                                <div class="detail-value" id="value">1.33<span class="unit" id="value-unit">亿元</span>
-                                </div>
-                            </div>
-                            <div class="detail-box hidden-md">
-                                <div class="detail-title ">流通市值</div>
-                                <div class="detail-value" id="availablemarketvalue">3248.13<span class="unit"
-                                                                                                 id="availablemarketvalue-unit">亿</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="selfstock-selector" href="#">
-                        加入自选股+
-                    </a>
-                </div>
-                <!--END信息盒-->
-
-                <!--图形-->
-                <div class="graph-box" id="stock-graph"></div>
-                <!--END图形-->
-
-                <!--图形类型-->
-                <div class="graph-type">
-                    <ul class="graph-header-test">
-                        <li><a href="javascript:void(0)" class="graph-type-selector current" id="graph-daily">日K</a>
-                        </li>
-                        <li><a href="javascript:void(0)" class="graph-type-selector" id="graph-weekly">周K</a></li>
-                        <li><a href="javascript:void(0)" class="graph-type-selector" id="graph-monthly">月K</a></li>
-                        <li><a href="javascript:void(0)" class="graph-type-selector" id="graph-time">分时</a></li>
-                    </ul>
-                </div>
-                <!--END图形类型-->
-            </div>
-            <!--END股票信息模块-->
-
-            <!--策略模块-->
-            <div class="strategies-panel hide-right">
-
-            </div>
-            <!--END策略模块-->
-
-            <!--账户管理模块-->
-            <div class="accounts-panel hide-right">
-                <div class="account-container" id="account-stock-container">
-                    <div class="account-id-box">
-                        <div class="account-id">
-                            <span id="account-stock-id" class="has-account-stock"></span>
-                            <a href="#" class="account-id-add has-no-account-stock" id="account-stock-id-add"
-                               data-toggle="modal" data-target="#account-add" data="stock">点击添加股市账户</a>
-                        </div>
-                        <div class="account-quit has-account-stock"><a href="#" class="account-quit-button"
-                                                                       data="stock"><img
-                                src="../static/assets/icons/delete.png"></a></div>
-                        <div class="account-id-underline"></div>
-                    </div>
-                    <div class="account-info-box">
-                        <div class="account-detail-box">
-                            <div class="account-detail-value" id="account-detail-stock-balance">0</div>
-                            <div class="account-detail-tip">账户余额</div>
-                            <div class="account-detail-value" id="account-detail-stock-freezing">0</div>
-                            <div class="account-detail-tip">冻结资金</div>
-                            <div class="account-detail-value" id="account-detail-stock-market">0</div>
-                            <div class="account-detail-tip">股票市值</div>
-                            <div class="account-detail-value" id="account-detail-stock-total">0</div>
-                            <div class="account-detail-tip">总资产</div>
-                            <div class="account-detail-value" id="account-detail-stock-profit">0</div>
-                            <div class="account-detail-tip">总盈亏</div>
-                        </div>
-                        <div class="account-market-header">
-                            <span class="account-market-code">代码</span>
-                            <span class="account-market-name">名称</span>
-                            <span class="account-market-price">市价</span>
-                            <span class="account-market-cost">成本价</span>
-                            <span class="account-market-market">市值</span>
-                            <span class="account-market-vol">数量</span>
-                            <span class="account-market-profit">盈亏</span>
-                        </div>
-                        <ul class="account-market-box scrollable slimScrollBar" id="account-market-stock-box">
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="account-container" id="account-future-container">
-                    <div class="account-id-box">
-                        <div class="account-id">
-                            <span id="account-future-id" class="has-account-future"></span>
-                            <a href="#" data-toggle="modal" data-target="#account-add"
-                               class="account-id-add has-no-account-future" id="account-future-id-add" data="future">点击添加股指期货账户</a>
-                        </div>
-                        <div class="account-quit has-account-future"><a href="#" class="account-quit-button"
-                                                                        data="future"><img
-                                src="../static/assets/icons/delete.png"></a></div>
-                        <div class="account-id-underline"></div>
-                    </div>
-                    <div class="account-info-box">
-                        <div class="account-detail-box">
-                            <div class="account-detail-value" id="account-detail-future-balance">0</div>
-                            <div class="account-detail-tip">账户余额</div>
-                            <div class="account-detail-value" id="account-detail-future-freezing">0</div>
-                            <div class="account-detail-tip">冻结资金</div>
-                            <div class="account-detail-value" id="account-detail-future-market">0</div>
-                            <div class="account-detail-tip">股票市值</div>
-                            <div class="account-detail-value" id="account-detail-future-total">0</div>
-                            <div class="account-detail-tip">总资产</div>
-                            <div class="account-detail-value" id="account-detail-future-profit">0</div>
-                            <div class="account-detail-tip">总盈亏</div>
-                        </div>
-                        <div class="account-market-header">
-                            <span class="account-market-code">代码</span>
-                            <span class="account-market-name">名称</span>
-                            <span class="account-market-price">市价</span>
-                            <span class="account-market-cost">成本价</span>
-                            <span class="account-market-market">市值</span>
-                            <span class="account-market-vol">数量</span>
-                            <span class="account-market-profit">盈亏</span>
-                        </div>
-                        <ul class="account-market-box scrollable slimScrollBar" id="account-market-future-box">
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--END账户管理模块-->
+  <!--页面区域-->
+  <section class="scrollable slimScrollBar">
+      <!--顶部图片-->
+      <section class="top-section">
+        <div class="top-picture">
+          <img id="k-line" src="../static/assets/img/top_kline.png" class="hidden-xs">
+          <img id="img" src="../static/assets/img/top_img.png">
         </div>
-        <!--END股票信息栏-->
+      </section>
+      <!--End 顶部图片-->
 
-        <!--交易栏-->
-        <div class="trade">
-            <!--交易模块-->
-            <div class="trade-panel">
-                <div class="trade-target">
-                    <button id="trade-target-future">股指期货</button>
-                    <button id="trade-target-stock">股票</button>
-                </div>
-                <div class="trade-container" id="trade-future">
-                    <div class="trade-container-left">
-                        <div class="stock-info trade-box-with-border">
-                            <div class="stock-info-code" id="trade-future-code"></div>
-                            <input type="text" id="trade-future-input">
-                            <div class="stock-info-name" id="trade-future-name"></div>
-                        </div>
-                        <div class="trade-price trade-box-with-border">
-                            <div class="trade-price-minus"><a href="#"
-                                                              class="trade-price-minus-icon trade-future-price-icon"
-                                                              data="-0.01">-
-                                <text class="trade-price-button-tip hidden-md">0.01</text>
-                            </a></div>
-                            <input class="trade-price-input" id="trade-future-price-input">
-                            <div class="trade-price-add"><a href="#"
-                                                            class="trade-price-add-icon trade-future-price-icon"
-                                                            data="0.01">+
-                                <text class="trade-price-button-tip hidden-md">0.01</text>
-                            </a></div>
-                        </div>
-                        <div class="trade-price-tip">
-                            <div class="trade-price-tip-min price-down" id="trade-future-price-tip-buy"><a href="#"
-                                                                                                           class="trade-price-select trade-future-price-select">买<span
-                                    class="price"></span></a></div>
-                            <div class="trade-price-tip-max price-up" id="trade-future-price-tip-bid"><a href="#"
-                                                                                                         class="trade-price-select trade-future-price-select">卖<span
-                                    class="price"></span></a></div>
-                        </div>
-                        <div class="trade-counts trade-box-with-border">
-                            <div class="trade-counts-tip">数量</div>
-                            <input class="trade-counts-input">
-                            <div class="trade-counts-has" id="trade-future-vol">最大8手</div>
-                        </div>
-                        <button class="trade-button trade-button-buy" id="future-trade-button-buy">买入</button>
-                        <button class="trade-button trade-button-bid" id="future-trade-button-bid">卖出</button>
-                    </div>
-                    <div class="trade-container-right" id="trade-future-container-right">
-                        <div class="trade-future-type-tip">委托类型</div>
-                        <button class="future-trade-button focus" data="limited_price">限价</button>
-                        <button class="future-trade-button" data="market_price">市价</button>
-                        <button class="future-trade-button" data="stop_price">止损价</button>
-                        <div class="future-trade-tip available-money first">可用资金;&nbsp￥<span
-                                class="available-money-value">1,002,023</span></div>
-                        <div class="future-trade-tip trade-unit">交易单位;&nbsp<span class="trade-unit-value">300</span>人民币/点
-                        </div>
-                    </div>
-                </div>
-                <div class="trade-container" id="trade-stock">
-                    <div class="trade-container-left">
-                        <div class="stock-info trade-box-with-border">
-                            <div class="stock-info-code" id="trade-stock-code"></div>
-                            <input type="text" id="trade-stock-input">
-                            <div class="stock-info-name" id="trade-stock-name"></div>
-                        </div>
-                        <div class="trade-price trade-box-with-border">
-                            <div class="trade-price-minus"><a href="#"
-                                                              class="trade-price-minus-icon trade-stock-price-icon"
-                                                              data="-0.01">-
-                                <text class="trade-price-button-tip hidden-md">0.01</text>
-                            </a></div>
-                            <input class="trade-price-input" id="trade-stock-price-input">
-                            <div class="trade-price-add"><a href="#" class="trade-price-add-icon trade-stock-price-icon"
-                                                            data="0.01">+
-                                <text class="trade-price-button-tip hidden-md">0.01</text>
-                            </a></div>
-                        </div>
-                        <div class="trade-price-tip">
-                            <div class="trade-price-tip-min price-down" id="trade-stock-price-tip-min"><a href="#"
-                                                                                                          class="trade-price-select trade-stock-price-select">跌停<span
-                                    class="price"></span></a></div>
-                            <div class="trade-price-tip-max price-up" id="trade-stock-price-tip-max"><a href="#"
-                                                                                                        class="trade-price-select trade-stock-price-select">涨停<span
-                                    class="price"></span></a></div>
-                        </div>
-                        <div class="trade-counts trade-box-with-border">
-                            <div class="trade-counts-tip">数量</div>
-                            <input class="trade-counts-input" id="stock-trade-counts-input">
-                            <div class="trade-counts-has" id="trade-stock-vol">持有1024股</div>
-                        </div>
-                        <button class="trade-button trade-button-buy" id="stock-trade-button-buy">买入</button>
-                        <button class="trade-button trade-button-bid" id="stock-trade-button-bid">卖出</button>
-                    </div>
-                    <div class="trade-container-right">
-                        <ul class="trade-five-price-bids">
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="bid5"><span class="tip">卖5</span><span class="price">17.85</span><span
-                                    class="counts">1000</span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="bid4"><span class="tip">卖4</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="bid3"><span class="tip">卖3</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="bid2"><span class="tip">卖2</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="bid1"><span class="tip">卖1</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                        </ul>
-                        <ul class="trade-five-price-buy">
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="buy1"><span class="tip">买1</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="buy2"><span class="tip">买2</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="buy3"><span class="tip">买3</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="buy4"><span class="tip">买4</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                            <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select"
-                                                            id="buy5"><span class="tip">买5</span><span
-                                    class="price"></span><span class="counts"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--END交易模块-->
+      <!--股票信息栏-->
+      <div class="stock">
+          <!--自选股模块-->
+          <div class="selfstock-panel">
+             <div class="selfstcok-container">
+                <div class="selfstock-box">
+                    <div class="panel-title">我的自选股</div>
+                    <ul class="selfstock-list scrollable slimScrollBar">
 
-            <!--订单模块-->
-            <div class="orderdetail-panel">
+                    </ul>
+
+                </div>
+             </div>
+          </div>
+          <!--END自选股模块-->
+
+          <!--股票信息模块-->
+          <div class="stockdetail-panel">
+              <!--搜索-->
+              <div class="search-box">
+                  <a href="#" data-toggle="dropdown" class="search-box-tip">代码<div class="triangle-right-bottom"></div></a>
+                  <ul class="dropdown-menu search-box-tip-dropdown">
+                      <div class="up-triangle"></div>
+                      <li><a href="#" class="search-box-tip-change" data="code">代码</a></li>
+                      <li><a href="#" class="search-box-tip-change" data="time">时间</a></li>
+                  </ul>
+                  <div class="stocklist-select-box">
+                      <select class="stocklist-select"><option value="" disabled selected>请输入股票名称或代码</option></select>
+                  </div>
+                  <div class="stocklist-time-box">
+                      <input id="time-search-y" placeholder=""><span class="spliter">-</span>
+                      <input id="time-search-M" placeholder=""><span class="spliter">-</span>
+                      <input id="time-search-d" placeholder="">
+                  </div>
+                  <button class="search-stock">搜索</button>
+              </div>
+              <!--END搜索-->
+
+              <!--信息盒-->
+              <div class="stockdetail-box">
+                  <div class="detail-left">
+                      <div class="detail-name">浦发银行(600000)</div>
+                      <div class="detail-price price-up">15.83<img id="price-arrow" src="../static/assets/icons/price_up.png"></div>
+                      <div class="detail-updown price-up"><span class="updown">+0.04</span><span class="scale">+0.25%</span></div>
+                  </div>
+                  <div class="detail-right">
+                      <div class="detail-layer">
+                          <div class="detail-box">
+                              <div class="detail-title">今开</div>
+                              <div class="detail-value price-up" id="open">15.80</div>
+                          </div>
+                          <div class="detail-box">
+                              <div class="detail-title">最高</div>
+                              <div class="detail-value price-up" id="high">15.84</div>
+                          </div>
+                          <div class="detail-box">
+                              <div class="detail-title">涨停</div>
+                              <div class="detail-value price-up" id="max">17.37</div>
+                          </div>
+                          <div class="detail-box hidden-xs">
+                              <div class="detail-title">总量</div>
+                              <div class="detail-value" id="vol">8.44<span class="unit" id="vol-unit">万手</span></div>
+                          </div>
+                          <div class="detail-box hidden-xs">
+                              <div class="detail-title">市值</div>
+                              <div class="detail-value" id="marketvalue">3422.17<span class="unit" id="marketvalue-unit">亿</span></div>
+                          </div>
+                      </div>
+                      <div class="detail-layer">
+                          <div class="detail-box">
+                              <div class="detail-title">昨收</div>
+                              <div class="detail-value" id="close">15.79</div>
+                          </div>
+                          <div class="detail-box">
+                              <div class="detail-title">最低</div>
+                              <div class="detail-value price-down" id="low">15.73</div>
+                          </div>
+                          <div class="detail-box">
+                              <div class="detail-title">跌停</div>
+                              <div class="detail-value price-down" id="min">14.21</div>
+                          </div>
+                          <div class="detail-box hidden-md">
+                              <div class="detail-title">总额</div>
+                              <div class="detail-value" id="value">1.33<span class="unit" id="value-unit">亿元</span></div>
+                          </div>
+                          <div class="detail-box hidden-md">
+                              <div class="detail-title ">流通市值</div>
+                              <div class="detail-value" id="availablemarketvalue">3248.13<span class="unit" id="availablemarketvalue-unit">亿</span></div>
+                          </div>
+                      </div>
+                  </div>
+                  <a class="selfstock-selector" href="#">
+                      加入自选股+
+                  </a>
+              </div>
+              <!--END信息盒-->
+
+              <!--图形-->
+              <div class="graph-box" id="stock-graph"></div>
+              <!--END图形-->
+
+              <!--图形类型-->
+              <div class="graph-type">
+                  <ul class="graph-header-test">
+                      <li><a href="javascript:void(0)" class="graph-type-selector current" id="graph-daily">日K</a> </li>
+                      <li><a href="javascript:void(0)" class="graph-type-selector" id="graph-weekly">周K</a> </li>
+                      <li><a href="javascript:void(0)" class="graph-type-selector" id="graph-monthly">月K</a> </li>
+                      <li><a href="javascript:void(0)" class="graph-type-selector" id="graph-time">分时</a> </li>
+                  </ul>
+              </div>
+              <!--END图形类型-->
+          </div>
+          <!--END股票信息模块-->
+
+          <!--策略模块-->
+          <div class="strategies-panel hide-right">
+
+          </div>
+          <!--END策略模块-->
+
+          <!--账户管理模块-->
+          <div class="accounts-panel hide-right">
+              <div class="account-container" id="account-stock-container">
+                  <div class="account-id-box">
+                      <div class="account-id">
+                          <span id="account-stock-id" class="has-account-stock"></span>
+                          <a href="#" class="account-id-add has-no-account-stock" id="account-stock-id-add" data-toggle="modal" data-target="#account-add" data="stock">点击添加股市账户</a>
+                      </div>
+                      <div class="account-quit has-account-stock"><a href="#" class="account-quit-button" data="stock"><img src="../static/assets/icons/delete.png"></a></div>
+                      <div class="account-id-underline"></div>
+                  </div>
+                  <div class="account-info-box">
+                      <div class="account-detail-box">
+                          <div class="account-detail-value" id="account-detail-stock-balance">0</div>
+                          <div class="account-detail-tip">账户余额</div>
+                          <div class="account-detail-value" id="account-detail-stock-freezing">0</div>
+                          <div class="account-detail-tip">冻结资金</div>
+                          <div class="account-detail-value" id="account-detail-stock-market">0</div>
+                          <div class="account-detail-tip">股票市值</div>
+                          <div class="account-detail-value" id="account-detail-stock-total">0</div>
+                          <div class="account-detail-tip">总资产</div>
+                          <div class="account-detail-value" id="account-detail-stock-profit">0</div>
+                          <div class="account-detail-tip">总盈亏</div>
+                      </div>
+                      <div class="account-market-header">
+                          <span class="account-market-code">代码</span>
+                          <span class="account-market-name">名称</span>
+                          <span class="account-market-price">市价</span>
+                          <span class="account-market-cost">成本价</span>
+                          <span class="account-market-market">市值</span>
+                          <span class="account-market-vol">数量</span>
+                          <span class="account-market-profit">盈亏</span>
+                      </div>
+                      <ul class="account-market-box scrollable slimScrollBar" id="account-market-stock-box">
+
+                      </ul>
+                  </div>
+              </div>
+              <div class="account-container" id="account-future-container">
+                  <div class="account-id-box">
+                      <div class="account-id">
+                          <span id="account-future-id" class="has-account-future"></span>
+                          <a href="#" data-toggle="modal" data-target="#account-add" class="account-id-add has-no-account-future" id="account-future-id-add" data="future">点击添加股指期货账户</a>
+                      </div>
+                      <div class="account-quit has-account-future"><a href="#" class="account-quit-button" data="future"><img src="../static/assets/icons/delete.png"></a></div>
+                      <div class="account-id-underline"></div>
+                  </div>
+                  <div class="account-info-box">
+                      <div class="account-detail-box">
+                          <div class="account-detail-value" id="account-detail-future-balance">0</div>
+                          <div class="account-detail-tip">账户余额</div>
+                          <div class="account-detail-value" id="account-detail-future-freezing">0</div>
+                          <div class="account-detail-tip">冻结资金</div>
+                          <div class="account-detail-value" id="account-detail-future-market">0</div>
+                          <div class="account-detail-tip">股票市值</div>
+                          <div class="account-detail-value" id="account-detail-future-total">0</div>
+                          <div class="account-detail-tip">总资产</div>
+                          <div class="account-detail-value" id="account-detail-future-profit">0</div>
+                          <div class="account-detail-tip">总盈亏</div>
+                      </div>
+                      <div class="account-market-header">
+                          <span class="account-market-code">代码</span>
+                          <span class="account-market-name">名称</span>
+                          <span class="account-market-price">市价</span>
+                          <span class="account-market-cost">成本价</span>
+                          <span class="account-market-market">市值</span>
+                          <span class="account-market-vol">数量</span>
+                          <span class="account-market-profit">盈亏</span>
+                      </div>
+                      <ul class="account-market-box scrollable slimScrollBar" id="account-market-future-box">
+
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <!--END账户管理模块-->
+      </div>
+      <!--END股票信息栏-->
+
+      <!--交易栏-->
+      <div class="trade temp-hide">
+          <!--交易模块-->
+          <div class="trade-panel">
+              <div class="trade-target">
+                  <button id="trade-target-future">股指期货</button>
+                  <button id="trade-target-stock">股票</button>
+              </div>
+              <div class="trade-container" id="trade-future">
+                  <div class="trade-container-left">
+                      <div class="stock-info trade-box-with-border">
+                          <div class="stock-info-code" id="trade-future-code"></div>
+                          <input type="text" id="trade-future-input">
+                          <div class="stock-info-name" id="trade-future-name"></div>
+                      </div>
+                      <div class="trade-price trade-box-with-border">
+                          <div class="trade-price-minus"><a href="#" class="trade-price-minus-icon trade-future-price-icon" data="-0.01">-<text class="trade-price-button-tip hidden-md">0.01</text></a></div>
+                          <input class="trade-price-input" id="trade-future-price-input">
+                          <div class="trade-price-add"><a href="#" class="trade-price-add-icon trade-future-price-icon" data="0.01">+<text class="trade-price-button-tip hidden-md">0.01</text></a></div>
+                      </div>
+                      <div class="trade-price-tip">
+                          <div class="trade-price-tip-min price-down" id="trade-future-price-tip-buy"><a href="#" class="trade-price-select trade-future-price-select">买<span class="price"></span></a></div>
+                          <div class="trade-price-tip-max price-up" id="trade-future-price-tip-bid"><a href="#" class="trade-price-select trade-future-price-select">卖<span class="price"></span></a></div>
+                      </div>
+                      <div class="trade-counts trade-box-with-border">
+                          <div class="trade-counts-tip">数量</div>
+                          <input class="trade-counts-input">
+                          <div class="trade-counts-has" id="trade-future-vol">最大8手</div>
+                      </div>
+                      <button class="trade-button trade-button-buy" id="future-trade-button-buy">买入</button>
+                      <button class="trade-button trade-button-bid" id="future-trade-button-bid">卖出</button>
+                  </div>
+                  <div class="trade-container-right" id="trade-future-container-right">
+                      <div class="trade-future-type-tip">委托类型</div>
+                      <button class="future-trade-button focus" data="limited_price">限价</button>
+                      <button class="future-trade-button" data="market_price">市价</button>
+                      <button class="future-trade-button" data="stop_price">止损价</button>
+                      <div class="future-trade-tip available-money first">可用资金;&nbsp￥<span class="available-money-value">1,002,023</span></div>
+                      <div class="future-trade-tip trade-unit">交易单位;&nbsp<span class="trade-unit-value">300</span>人民币/点</div>
+                  </div>
+              </div>
+              <div class="trade-container" id="trade-stock">
+                <div class="trade-container-left">
+                    <div class="stock-info trade-box-with-border">
+                        <div class="stock-info-code" id="trade-stock-code"></div>
+                        <input type="text" id="trade-stock-input">
+                        <div class="stock-info-name" id="trade-stock-name"></div>
+                    </div>
+                    <div class="trade-price trade-box-with-border">
+                        <div class="trade-price-minus"><a href="#" class="trade-price-minus-icon trade-stock-price-icon" data="-0.01">-<text class="trade-price-button-tip hidden-md">0.01</text></a></div>
+                        <input class="trade-price-input" id="trade-stock-price-input">
+                        <div class="trade-price-add"><a href="#" class="trade-price-add-icon trade-stock-price-icon" data="0.01">+<text class="trade-price-button-tip hidden-md">0.01</text></a></div>
+                    </div>
+                    <div class="trade-price-tip">
+                        <div class="trade-price-tip-min price-down" id="trade-stock-price-tip-min"><a href="#" class="trade-price-select trade-stock-price-select">跌停<span class="price"></span></a></div>
+                        <div class="trade-price-tip-max price-up" id="trade-stock-price-tip-max"><a href="#" class="trade-price-select trade-stock-price-select">涨停<span class="price"></span></a></div>
+                    </div>
+                    <div class="trade-counts trade-box-with-border">
+                        <div class="trade-counts-tip">数量</div>
+                        <input class="trade-counts-input">
+                        <div class="trade-counts-has" id="trade-stock-vol">持有1024股</div>
+                    </div>
+                    <button class="trade-button trade-button-buy" id="stock-trade-button-buy">买入</button>
+                    <button class="trade-button trade-button-bid" id="stock-trade-button-bid">卖出</button>
+                </div>
+                <div class="trade-container-right">
+                    <ul class="trade-five-price-bids">
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="bid5"><span class="tip">卖5</span><span class="price">17.85</span><span class="counts">1000</span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="bid4"><span class="tip">卖4</span><span class="price"></span><span class="counts"></span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="bid3"><span class="tip">卖3</span><span class="price"></span><span class="counts"></span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="bid2"><span class="tip">卖2</span><span class="price"></span><span class="counts"></span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="bid1"><span class="tip">卖1</span><span class="price"></span><span class="counts"></span></a></li>
+                    </ul>
+                    <ul class="trade-five-price-buy">
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="buy1"><span class="tip">买1</span><span class="price"></span><span class="counts"></span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="buy2"><span class="tip">买2</span><span class="price"></span><span class="counts"></span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="buy3"><span class="tip">买3</span><span class="price"></span><span class="counts"></span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="buy4"><span class="tip">买4</span><span class="price"></span><span class="counts"></span></a></li>
+                        <li class="trade-price-item"><a href="#" class="trade-price-select trade-stock-price-select" id="buy5"><span class="tip">买5</span><span class="price"></span><span class="counts"></span></a></li>
+                    </ul>
+                </div>
+              </div>
+          </div>
+          <!--END交易模块-->
+
+          <!--订单模块-->
+          <div class="orderdetail-panel">
                 <ul class="orderdetail-header">
                     <li class="focus"><a href="#" id="today-order-button">当日订单</a></li>
                     <li><a href="#" id="history-order-button">历史订单</a></li>
@@ -435,12 +372,12 @@
                         <span class="order-value">市值</span>
                     </li>
                 </ul>
-            </div>
-            <!--END订单模块-->
-        </div>
-        <!--END交易栏-->
-    </section>
-    <!--End 页面区域-->
+          </div>
+          <!--END订单模块-->
+      </div>
+      <!--END交易栏-->
+  </section>
+  <!--End 页面区域-->
 </section>
 
 <!--登录注册窗口-->
@@ -522,8 +459,7 @@
 <div class="modal fade login-register-dialog" id="account-add" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <a href="#" class="account-add-modal-close" data-dismiss="modal"><img
-                    src="../static/assets/icons/delete.png"></a>
+           <a href="#" class="account-add-modal-close" data-dismiss="modal"><img src="../static/assets/icons/delete.png"></a>
             <div class="account-add-type">
                 <button class="account-type-button" id="account-type-stock" data="stock">股票</button>
                 <button class="account-type-button" id="account-type-future" data="future">股指期货</button>

@@ -1,4 +1,4 @@
-from model_admin import String, Integer, db, DECIMAL, DateTime
+from stock.model.model_admin import String, Integer, db, DECIMAL, DateTime
 from werkzeug.security import generate_password_hash, check_password_hash
 import re
 

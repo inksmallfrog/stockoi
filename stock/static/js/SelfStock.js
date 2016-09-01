@@ -116,10 +116,10 @@ SelfStock.prototype.addStock = function(id, code, name){
      *           id => 股票id
      * 返回：无
      */
-    $.post("../selfstockadd", {user_id: user.id, id: id}, function (data) {
+    $.post("../selfstockadd", {user_id: user.id, id: id}, function(data){
         //alert(data);
     });
-    this.stock_list.push({id: id, code: code, name: name});
+    this.stock_list.push({id:id, code:code, name:name});
     this.bindData();
 };
 

@@ -149,7 +149,7 @@ Trade.prototype.updateFuture = function(){
         var trade_price_input = $("#trade-future-price-input");
         if(trade_price_input.val() == ""){
             trade_price_input.val((future.price).toFixed(2));
-        }
+        };
         $("#trade-future-price-tip-buy").children().children(".price").html((future.buy).toFixed(2));
         $("#trade-future-price-tip-bid").children().children(".price").html((future.bid).toFixed(2));
         $("#trade-future-vol").html("最大" + future.vol_max + "手");
@@ -194,12 +194,17 @@ Trade.prototype.updateStock = function(){
      *               buy1vol => 买1量
      */
     $.post("../tradestockinfo", {user_id: user.id, id: this.stockid}, function(stock){
+        console.log(stock);
+        var changed = false;
+        if($(".stock-info-code").html() == stock.code){
+            changed = true;
+        }
         $(".stock-info-code").html(stock.code);
         $(".stock-info-name").html(stock.name);
         var trade_price_input = $(".trade-price-input");
-        if(trade_price_input.val() == ""){
+        if(changed){
             trade_price_input.val((Number(stock.price)).toFixed(2));
-        }
+        };
         $(".trade-price-tip-min").children().children(".price").html((Math.round(Number(stock.close) * 0.9 * 100) / 100.0).toFixed(2));
         $(".trade-price-tip-max").children().children(".price").html((Math.round(Number(stock.close) * 1.1 * 100) / 100.0).toFixed(2));
         $(".trade-counts-has").html("持有" + stock.vol_has + "股");
@@ -305,29 +310,8 @@ Trade.prototype.trade = function(action){
     var option = "";
     if(this.trade_target == "future"){
         option = $("#trade-future-container-right").children("focus").attr("data");
-        var count = $(".trade-counts-input").val();
-        $.post("../trade", {
-            user_id: user.id,
-            id: stock.id,
-            price: $("#trade-future-price-input").val(),
-            counts: count,
-            action: action,
-            type: trade.trade_target,
-            option: option
-        });
-    } else {
-        var stock_count = $("#stock-trade-counts-input").val();
-        $.post("../trade", {
-            user_id: user.id,
-            id: stock.id,
-            price: $("#trade-stock-price-input").val(),
-            counts: stock_count,
-            action: action,
-            type: trade.trade_target
-        });
     }
-
-
+    $.post("../trade", {user_id: user.id, id: trade.stockid, price: $(".trade-price-input").val(), counts: $(".trade-counts-input").val(), action: action, type: trade.trade_target, option: option});
 };
 
 Trade.prototype.buy = function(){

@@ -50,9 +50,9 @@ Account.prototype.loadAccount = function(type){
          * 期待返回内容：对应的账号id
          */
         $.post("../getuseraccount", {user_id: user.id, type: type}, function(data){
-            if (typeof data.error == "undefined") {
+               if(typeof data.error == "undefined"){
                     account.has_account[type] = true;
-                $("#account-" + type + "-id").html(data.id);
+                   $("#account-" + type + "-id").html(data.id);
                    $(".has-account-" + type).show();
                    $(".has-no-account-" + type).hide();
                    $("#account-type-" + type).addClass("disable");
@@ -138,11 +138,11 @@ Account.prototype.bindData = function(data, type){
     for(; count < detail.length; ++count){
         content += account_market_item.replace(/\{code}/g, detail[count].code)
             .replace(/\{name}/g, detail[count].name)
-            .replace(/\{price}/g, (detail[count].price))
-            .replace(/\{cost}/g, (detail[count].cost))
+            .replace(/\{price}/g, (detail[count].price).toFixed(2))
+            .replace(/\{cost}/g, (detail[count].cost).toFixed(2))
             .replace(/\{market}/g, detail[count].market)
             .replace(/\{vol}/g, detail[count].vol)
-            .replace(/\{profit}/g, (detail[count].profit));
+            .replace(/\{profit}/g, (detail[count].profit).toFixed(2));
     }
     for(; count < 12; ++count){
         content += account_market_item.replace(/\{code}/g, "")
@@ -177,8 +177,7 @@ Account.prototype.addAccount = function(){
      *           pwd => 密码
      * 返回：无
      */
-    $.post("../addaccount", {
-            user_id: user.id,
+    $.post("../addaccount", {user_id: user.id,
         type: type,
         brokerage: $("#account-add-brokerage").val(),
         id: $("#account-add-id").val(),

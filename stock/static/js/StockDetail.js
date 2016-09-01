@@ -137,7 +137,7 @@ StockDetail.prototype.bindData = function(){
 };
 
 //更新股票图表
-StockDetail.prototype.updateGraph = function (start_time) {
+StockDetail.prototype.updateGraph = function(start_time){
     stock.updateGraphData(start_time);
     stock_detail.stock_graph.drawGraph();
 };

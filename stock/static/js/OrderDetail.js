@@ -64,12 +64,7 @@ OrderDetail.prototype.loadOrders = function(date){
      *                                     price => 订单价格
      *                                     finished => 完成状态("finished" => 已完成订单, "unfinished" => 未完成订单)
      */
-    $.post("../orders", {user_id: user.id, date: date}, function (data) {
-        if (data != undefined) {
-            console.log(data);
-            order_detail.bindData(data);
-        }
-    }, "json");
+    $.post("../orders", {user_id: user.id, date: date}, function(data){order_detail.bindData(data)}, "json");
 };
 
 OrderDetail.prototype.loadTodayOrders = function(){
@@ -85,33 +80,31 @@ OrderDetail.prototype.searchOrdersAtTime = function(time){
 };
 
 OrderDetail.prototype.bindData = function(data){
-    if (data != undefined) {
-        var orders = data['orders'];
-        var content = order_top;
-        for (var i = 0; i < orders.length; ++i) {
-            content += order_item.replace(/\{id}/g, orders[i].id)
-                .replace(/\{code}/g, orders[i].code)
-                .replace(/\{name}/g, orders[i].name)
-                .replace(/\{type}/g, orders[i].type)
-                .replace(/\{status}/g, orders[i].status)
-                .replace(/\{count}/g, orders[i].count)
-                .replace(/\{price}/g, (orders[i].price))
-                .replace(/\{value}/g, (orders[i].price * orders[i].count))
-                .replace(/\{order_id}/g, orders[i].order_id)
-                .replace(/\{finished}/g, orders[i].finished);
-        }
-        $(".orderdetail-container").html(content);
-
-        $(".order-stock").click(function () {
-            stock.changeStock($(this).attr("data"));
-        });
-        $(".order-undo").click(function () {
-            if ($(this).hasClass("unfinished")) {
-                order_detail.undo($(this).attr("data"));
-                $(this).parents("li").remove();
-            }
-        });
+    var orders = data.orders;
+    var content = order_top;
+    for(var i = 0; i < orders.length; ++i){
+        content += order_item.replace(/\{id}/g, orders[i].id)
+                             .replace(/\{code}/g, orders[i].code)
+                             .replace(/\{name}/g, orders[i].name)
+                             .replace(/\{type}/g, orders[i].type)
+                             .replace(/\{status}/g, orders[i].status)
+                             .replace(/\{count}/g, orders[i].count)
+                             .replace(/\{price}/g, (orders[i].price).toFixed(2))
+                             .replace(/\{value}/g, (orders[i].price * orders[i].count).toFixed(2))
+                             .replace(/\{order_id}/g, orders[i].order_id)
+                             .replace(/\{finished}/g, orders[i].finished);
     }
+    $(".orderdetail-container").html(content);
+
+    $(".order-stock").click(function(){
+       stock.changeStock($(this).attr("data"));
+    });
+    $(".order-undo").click(function(){
+        if($(this).hasClass("unfinished")){
+            order_detail.undo($(this).attr("data"));
+            $(this).parents("li").remove();
+        }
+    });
 };
 
 OrderDetail.prototype.undo = function(order_id){

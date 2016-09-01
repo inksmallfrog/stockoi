@@ -1,7 +1,7 @@
 /**
  * Created by inksmallfrog on 2016/8/30.
  */
-function loadStockList() {
+function loadStockList(){
     /*
      * 加载今日有效股票列表
      * 发送目标：{root}/stocklist
@@ -12,28 +12,26 @@ function loadStockList() {
      *                  code => 股票代码
      *                  name => 股票名
      */
-    stock_list = [
-        {
-            "id": "000001SH",
-            "code": "000001",
-            "name": "上证指数"
-        },
-        {
-            "id": "600000SH",
-            "code": "600000",
-            "name": "浦东机场"
-        },
-        {
-            "id": "88888888SH",
-            "code": "88888888",
-            "name": "小蛙制杖"
-        }
-    ];
-    initPage();
-    $.post("../stocklist", {}, function (data) {
-        stock_list = data['data'];
+    $.post("../stocklist", {}, function(data){
+        stock_list = data.data;
         initPage();
     });
-
-
+    /*stock_list = [
+    {
+        "id": "000001SH",
+        "code": "000001",
+        "name": "上证指数"
+    },
+    {
+        "id": "600000SH",
+        "code": "600000",
+        "name": "浦东机场"
+    },
+    {
+        "id": "88888888SH",
+        "code": "88888888",
+        "name": "小蛙制杖"
+    }
+];
+    initPage();*/
 }

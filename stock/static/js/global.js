@@ -20,7 +20,7 @@ $(document).ready(function(){
     loadStockList();
 });
 
-function initPage() {
+function initPage(){
     user = new User();
     stock = new Stock();
 
